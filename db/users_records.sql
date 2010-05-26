@@ -1,0 +1,22 @@
+insert into users values ('mattb','Mathew','Braun','mattb@uga.edu','sts');
+insert into users values ('abarfoot','Andrew','Barfoot','abarfoot@uga.edu','sts');
+insert into users values ('sang1989','Sam','Chun','sang1989@uga.edu','sts');
+insert into users values ('rdekker','Ryan','Dekker','rdekker@uga.edu','sts');
+insert into users values ('ahalpern','Ashley','Halpern','ahalpern@uga.edu','sts');
+insert into users values ('danman01','Danny','Kirschner','danman01@uga.edu','sts');
+insert into users values ('waffman','Kevin','Letz','waffman@uga.edu','sts');
+insert into users values ('fluffy','Drew','Merritt','fluffy@uga.edu','sts');
+insert into users values ('jmullis','Josh','Mullis','jmullis@uga.edu','sts');
+insert into users values ('ross328','Andrew','Ross','ross328@uga.edu','sts');
+insert into users values ('jksmith','Jared','Smith','jksmith@uga.edu','sts');
+insert into users values ('pkeck','Paul','Keck','pkeck@uga.edu','NIC');
+insert into users values ('bmarable','Brian','Marable ','bmarable@uga.edu','NOC');
+insert into users values ('dustyd','Dustin','Deadwylyer ','dustyd@uga.edu','NOC');
+insert into users values ('nealj','Neal','Jordan','nealj@uga.edu','NOC');
+insert into users values ('seanc','Sean','Canup','seanc@uga.edu','NOC');
+insert into users values ('cbaines','Chris','Baines ','cbaines@uga.edu','Special Projects');
+insert into users values ('gveeder','George','Veeder','gveeder@uga.edu','Special Projects');
+insert into users values ('dwflint','Dennis','Flint','dwflint@uga.edu','Special Projects');
+insert into users values ('tshields','Tim','Shields','tshields@uga.edu','Special Projects');
+insert into users values ('whelchel','Jeff','Whelchel','whelchel@uga.edu','Special Projects');
+

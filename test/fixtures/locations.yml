@@ -1,0 +1,20 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  building_number: 
+  name: 
+
+two:
+  building_number: 
+  name: 
+
+# == Schema Information
+#
+# Table name: locations
+#
+#  building_dbid   :integer         not null, primary key
+#  building_number :string(10)
+#  name            :string(200)
+#  community       :string(200)
+#
+

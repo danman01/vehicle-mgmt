@@ -1,0 +1,68 @@
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#show_comment").click(function(){
+		$("#edit_comment").toggle("slow");
+	});
+});
+</script>
+
+
+<h1>Editing trip</h1>
+
+<% form_for(@trip) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= "Trip ID: "+ @trip.id.to_s %><br />
+  </p>
+  <p>
+    <%= select(:trip, :vehicle_id, Vehicle.find(:all).collect { |v| [v.alias + v.vehicleID, v.vehicleID]}, options ={:prompt =>"select a vehicle"})%><br />
+
+	
+  </p>
+ <p>
+    <%= select(:trip, :destination_name, Location.find(:all).collect { |l| [l.name, l.name]}, options ={:prompt =>'Select a location'})%><br />
+
+  </p>
+  <p>
+    <%= select(:trip, :myid, User.find(:all).collect { |u| [u.myid, u.myid]}, options ={:prompt =>'Select a user'})%><br />
+
+  </p>
+  <p>
+    <%= f.label :check_out_time %><br />
+    <%= f.datetime_select :check_out_time %>
+  </p>
+  <p>
+	<%if @trip.check_in_time!=nil%>
+    <%= f.label :check_in_time %><br />
+    <%= f.datetime_select :check_in_time %>
+	<%end%>
+  </p>
+ <p>
+    <b>Comments</b>
+	<%if @trip.comments?%>
+    	<%=h @trip.comments %>
+<br />
+		<a href="#" id="show_comment">Edit Comment</a>
+	<%else%>
+	<br />
+		<a href="#" id="show_comment">Add Comment</a>
+
+	<%end%>
+		<div id="edit_comment">
+		  <p>
+		    <%= f.label :comments %><br />
+		    <%= f.text_area :comments %>
+		  </p>
+		 
+		
+		</div>
+  </p>
+<p>
+  <%= f.submit 'Update Details' %>
+</p>
+<% end %>
+
+<%= link_to 'Show', @trip %> |
+<%= link_to 'Back', trips_path %>

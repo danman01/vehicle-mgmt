@@ -1,0 +1,31 @@
+<%=link_to "Return to Admin page", "/admin_view"%>
+
+
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Myid</th>
+    <th>User fname</th>
+    <th>User lname</th>
+    <th>User email</th>
+    <th>User group</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.myid %></td>
+    <td><%=h user.user_fname %></td>
+    <td><%=h user.user_lname %></td>
+    <td><%=h user.user_email %></td>
+    <td><%=h user.user_group %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New user', new_user_path %>

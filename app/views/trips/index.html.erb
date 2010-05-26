@@ -1,0 +1,181 @@
+<head>
+<meta http-equiv="refresh" content="300">
+
+</head>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#show_link").click(function(){
+		$("#all_trips").toggle("slow");
+	});
+});
+
+$(document).ready(function() {
+
+   $('.tooltip').tooltip({ 
+    track: true, 
+    delay: 100, 
+    showURL: false, 
+    showBody: " - ", 
+    fade: 300
+});
+})
+
+//carousel 
+
+
+jQuery(document).ready(function() {
+    jQuery('#carousel').jcarousel({
+	visible: 4
+    });
+$(".green_box").width("188px")	
+$(".red_box").width("188px")
+
+});
+
+$(document).ready(function() {
+
+   $('.tr1').tooltip();
+})
+
+</script>
+<style type="text/css">
+#current_trips td
+{
+	line-height:30px;
+}
+td:hover
+{
+color:green
+}
+.tooltip
+{
+font-size:10px;
+}
+.trips_table
+{
+	width:100%;
+}
+.trips_table tr
+{
+	text-align:center;
+}
+
+</style>
+	<div id="top_container">
+		<div style="text-align:center" id="carousel" class="jcarousel-skin-ie7"><h3>Select a Vehicle:</h3>
+			<ul>
+					<% @checked_in_vehicles.each do |v| 
+						gas=""
+						service=""
+					if v.needs_gas==1
+						gas="<img src='/images/needs_gas.png' class='needs_attention tooltip' title='needs gas' alt='needs gas'/>"
+					end	
+					
+					if v.needs_service==1 and !v.service_comments.nil?
+						service="<img src='/images/needs_service.png' class='needs_attention tooltip' title='" + v.service_comments + "' alt='needs service' />"
+					elsif v.needs_service==1
+						service="<img src='/images/needs_service.png' class='needs_attention tooltip' title='needs service' alt='needs service' />"
+					end
+					%>
+					
+					<li class="green_box" style="width:185px" ><%= link_to image_tag(v.image_url)+'<br/>'+ gas + service + v.alias + " " + v.vehicleID, {:action => 'new', :id=>v.vehicleID}%></li>
+					<%end%>
+					<% @checked_out_vehicles.each do |v| 
+						gas=""
+						service=""
+					if v.needs_gas==1
+						gas="<img src='/images/needs_gas.png' class='needs_attention tooltip' title='needs gas' alt='needs gas'/>"
+					end	
+					
+					if v.needs_service==1 and !v.service_comments.nil?
+						service="<img src='/images/needs_service.png' class='needs_attention tooltip' title='" + v.service_comments + "' alt='needs service' />"
+					elsif v.needs_service==1
+						service="<img src='/images/needs_service.png' class='needs_attention tooltip' title='needs service' alt='needs service' />"
+					end
+					%>
+					
+					<li class="red_box" style="width:185px" ><%= link_to image_tag(v.image_url)+'<br/>'+ gas+ service + v.alias + " " + v.vehicleID, v%></li>
+					
+					<%end%>
+				</ul>
+		
+		</div>
+	</div>
+
+	<div id="bottom_container">
+		<div id="current_trips">
+		<h1 style="text-align:center;">All Trips in Progress</h1>
+		<table class="trips_table">
+		  <tr>
+		    <th>Trip</th>
+		    <th>Vehicle (id)</th>
+		    <th>Destination name</th>
+		    <th>Myid</th>
+		    <th>Check out time</th>
+		    <th>Check in</th>
+			<th>Notes</th>
+		  </tr>
+		<% @current_trips.each do |trip| %>
+		  <tr class="current_row">
+		    <td><%= link_to trip.trip_id, trip %></td>
+		    <% v=Vehicle.find_by_vehicleID(trip.vehicle_id)%>
+		    <td>  <%=v.alias%> (<%=h trip.vehicle_id %>)</td>
+		    <% b=Location.find_by_name(trip.destination_name)%>
+		    <td class="tooltip" title='building number: <%=b.building_number%>'><%=h trip.destination_name %></td>
+		    <% u=User.find_by_myid(trip.myid)%>
+		    <td class="tooltip" title='<%=u.user_fname%> <%=u.user_lname%>'><%=h trip.myid %></td>
+			<%if trip.check_out_time !=nil%>
+			<% t=Time.now
+			difference=t-trip.check_out_time
+			dif=difference/60
+			%>
+			    <td class="tooltip" title='Time out: <%=dif.to_i%> minutes'><%=h trip.check_out_time.strftime("%a, %b %e at %l:%M %p") %></td>
+			<%end%>
+			<%@check_in_id=trip.trip_id%>
+			
+		    <td class="tooltip" style="font-size:24px"><%= link_to 'Check In', {:action => 'return',:id => @check_in_id}, :confirm => "Check in "+ v.alias+" "+ v.vehicleID+"?"
+		    %></td>
+		
+			<%if trip.comments !=nil%>
+			    <td class="tooltip" title=<%=trip.comments%>><%=link_to 'Notes',trip %></td>
+			<%end%>
+			
+				<td><%= link_to 'Edit', edit_trip_path(trip)%></td>
+		    <td><%= link_to 'Destroy', trip, :confirm => 'Are you sure?', :method => :delete %></td>
+		  </tr>
+		<% end %>
+		</table>
+		<%= link_to 'View all trips', '/all'%>
+		</div>
+	
+		<div id="current_reservations">
+			<h1 style="text-align:center;">Reservations</h1>
+			<table class="trips_table">
+			  <tr>
+			    <th>Vehicle (id)</th>
+			    <th>User</th>
+			    <th>Reserved From</th>
+			    <th>Reserved Until</th>
+				<th>Notes</th>
+				<th>Fulfill</th>
+			  </tr>
+			<% @current_reservations.each do |reservation| %>
+				<tr>
+					<td><%=reservation.vehicle_id%></td>
+					<td><%= reservation.user_id%></td>
+					<td><%= reservation.reserved_from.strftime("%a, %b %e at %l:%M %p") %></td>
+					<td><%= reservation.reserved_until.strftime("%a, %b %e at %l:%M %p") %></td>
+					<td><%= reservation.comments%></td>
+					<td><%= link_to "Fulfill", {:action => 'new', :id=>reservation.vehicle_id, :reservation_id=>reservation.id}%></td>
+					<td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
+					<td><%= link_to 'Destroy', reservation, :confirm => 'Are you sure?', :method => :delete %></td>
+				    
+				</tr>
+			<%end%>
+			</table>
+		</div>
+	</div>
+	
+
+	</div>

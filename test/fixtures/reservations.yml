@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# one:
+#   column: value
+#
+# two:
+#   column: value
+
+# == Schema Information
+#
+# Table name: reservations
+#
+#  id             :integer         not null, primary key
+#  fulfilled      :integer         default(0)
+#  trip_id        :integer
+#  vehicle_id     :integer         not null
+#  user_id        :string(255)
+#  reserved_from  :datetime
+#  reserved_until :datetime
+#  comments       :text
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+

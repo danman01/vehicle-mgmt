@@ -1,0 +1,13 @@
+BEGIN TRANSACTION;
+CREATE TABLE "reservations" ("reservation_id" integer, "vehicle_id" varchar(10), "user_id" varchar(40), "comments" varchar(255), "reserved_from" datetime, "reserved_until" datetime, "created_at" datetime, "fulfilled" integer DEFAULT 0);
+INSERT INTO "reservations" VALUES(1,'94132','danman01','first reservation','2010-02-05 15:50:52','2010-02-05 15:50:57','2010-02-05 15:52:03',0);
+INSERT INTO "reservations" VALUES(NULL,'94237','danman01','','2010-02-08 19:02:00','2010-02-09 19:02:00','2010-02-05 19:02:30',0);
+INSERT INTO "reservations" VALUES(NULL,'94237','danman01','','2010-02-08 19:02:00','2010-02-09 19:02:00','2010-02-05 19:11:37',0);
+INSERT INTO "reservations" VALUES(NULL,'94237','danman01','','2010-02-08 19:02:00','2010-02-09 19:02:00','2010-02-05 19:13:01',0);
+INSERT INTO "reservations" VALUES(NULL,'94237','danman01','','2010-02-08 19:02:00','2010-02-09 19:02:00','2010-02-05 19:15:35',0);
+INSERT INTO "reservations" VALUES(NULL,'94237','danman01','','2010-02-08 19:02:00','2010-02-09 19:02:00','2010-02-05 19:15:44',0);
+INSERT INTO "reservations" VALUES(NULL,'94237','danman01','','2010-02-08 19:02:00','2010-02-09 19:02:00','2010-02-05 19:16:07',0);
+INSERT INTO "reservations" VALUES(NULL,'94237','danman01','','2010-02-08 19:02:00','2010-02-09 19:02:00','2010-02-05 19:16:30',0);
+INSERT INTO "reservations" VALUES(NULL,'94237','danman01','','2010-02-08 19:02:00','2010-02-09 19:02:00','2010-02-05 19:19:10',0);
+INSERT INTO "reservations" VALUES(NULL,'94237','danman01','','2010-02-08 19:02:00','2010-02-09 19:02:00','2010-02-05 19:19:24',0);
+COMMIT;

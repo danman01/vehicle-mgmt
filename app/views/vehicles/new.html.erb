@@ -1,0 +1,59 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	field=$("#vehicle_image_url")
+	field.val("/images/")
+
+	
+});
+</script>
+
+
+<%=link_to "Return to Admin page", "/admin_view"%>
+
+
+<h1>New vehicle</h1>
+<div id="left">
+<% form_for(@vehicle) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label 'vehicle ID' %> (ex: 94132)<br />
+    <%= f.text_field :vehicleID %>
+  </p>
+  <p>
+    <%= f.label :year_made %><br />
+    <%= f.text_field :year_made %>
+  </p>
+  <p>
+    <%= f.label :make %><br />
+    <%= f.text_field :make, :size=>20 %>
+  </p>
+  <p>
+    <%= f.label :model %><br />
+    <%= f.text_field :model, :size=>20 %>
+  </p>
+  <p>
+    <%= f.label :owner %><br />
+    <%= f.text_field :owner %> (STS, NOC, etc)
+  </p>
+  <p>
+    <%= f.label :alias %><br />
+    <%= f.text_field :alias, :size=>20 %>
+  </p>
+  <p>
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url, :size=>20 %> (/images/image_name.jpg)
+  </p>
+  <p>
+    
+    <%= f.check_box(:checked_out) %> Vehicle currently <%= f.label :checked_out %>?
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<%= link_to 'Back', vehicles_path %>
+<% end %>
+</div>
+<div id="right">
+	<img src="/images/5_Le_car_modele.jpg" />
+</div>

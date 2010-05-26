@@ -1,0 +1,30 @@
+<h1>Listing reservations</h1>
+
+<table>
+	<tr>
+		<td>Vehicle</td>
+		<td>User</td>
+		<td>Comments</td>
+		<td>Reserved At</td>
+		<td>Until</td>
+		<td>Created At</td>
+	</tr>
+<% @reservations.each do |reservation| %>
+  <tr>
+	<td><%= reservation.id %></td> 
+	<td><%=reservation.vehicle_id%></td>
+	<td><%=reservation.user_id%></td>
+	<td><%=reservation.comments%></td>
+	<td><%=reservation.reserved_from.strftime("%a, %b %e at %l:%M %p")%></td>
+	<td><%=reservation.reserved_until.strftime("%a, %b %e at %l:%M %p")%></td>
+	<td><%=reservation.created_at.strftime("%a, %b %e at %l:%M %p")%></td>
+    <td><%= link_to 'Show', reservation %></td>
+    <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
+    <td><%= link_to 'Destroy', reservation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New reservation', new_reservation_path %>

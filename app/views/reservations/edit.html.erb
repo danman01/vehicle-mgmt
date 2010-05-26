@@ -1,0 +1,63 @@
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#show_comment").click(function(){
+		$("#edit_comment").toggle("slow");
+	});
+});
+</script>
+<div id="left">
+<h1>Editing reservation</h1>
+<% form_for(@reservation) do |f| %>
+  <%= f.error_messages %>
+
+  
+  <p>
+    <%= select(:reservation, :vehicle_id, Vehicle.find(:all).collect { |v| [v.alias + v.vehicleID, v.vehicleID]}, options ={:prompt =>'Select a vehicle'})%><br />
+
+	
+  </p>
+  
+  <p>
+    <%= select(:reservation, :user_id, User.find(:all).collect { |u| [u.myid, u.myid]}, options ={:prompt =>'Select a user'})%><br />
+    
+  </p>
+<p>
+    <%= f.label :reserved_from %><br />
+    <%= f.datetime_select :reserved_from %>
+  </p>
+  <p>
+    <%= f.label :reserved_until %><br />
+    <%= f.datetime_select :reserved_until %>
+  </p>
+ <p>
+    <b>Comments</b>
+	<%if @reservation.comments?%>
+    	<%=h @reservation.comments %>
+<br />
+		<a href="#" id="show_comment">Edit Comment</a>
+	<%else%>
+	<br />
+		<a href="#" id="show_comment">Add Comment</a>
+
+	<%end%>
+		<div id="edit_comment">
+		  <p>
+		    <%= f.label :comments %><br />
+		    <%= f.text_area :comments %>
+		  </p>
+		  <p>
+		  </p>
+		</div>
+  </p>
+  <p>
+ <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @reservation %> |
+<%= link_to 'Back', reservations_path %>
+
+
+   

@@ -1,0 +1,32 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  trip_id: 1
+  vehicle_id: 
+  destination_name: 
+  myid: 
+  check_out_time: 2010-01-05 23:08:15
+  check_in_time: 2010-01-05 23:08:15
+
+two:
+  trip_id: 1
+  vehicle_id: 
+  destination_name: 
+  myid: 
+  check_out_time: 2010-01-05 23:08:15
+  check_in_time: 2010-01-05 23:08:15
+
+# == Schema Information
+#
+# Table name: trips
+#
+#  trip_id          :integer         not null, primary key
+#  vehicle_id       :string(16)
+#  destination_name :string(100)
+#  myid             :string(40)
+#  check_out_time   :datetime
+#  check_in_time    :datetime
+#  comments         :string(255)
+#  reservation_id   :integer
+#
+

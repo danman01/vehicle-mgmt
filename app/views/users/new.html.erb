@@ -1,0 +1,33 @@
+<%=link_to "Return to Admin page", "/admin_view"%>
+
+<h1>New user</h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :myid %><br />
+    <%= f.text_field :myid %>
+  </p>
+  <p>
+    <%= f.label :user_fname %><br />
+    <%= f.text_field :user_fname %>
+  </p>
+  <p>
+    <%= f.label :user_lname %><br />
+    <%= f.text_field :user_lname %>
+  </p>
+  <p>
+    <%= f.label :user_email %><br />
+    <%= f.text_field :user_email %>
+  </p>
+  <p>
+    <%= f.label :user_group %><br />
+    <%= f.text_field :user_group %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', users_path %>

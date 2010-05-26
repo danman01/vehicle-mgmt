@@ -1,0 +1,191 @@
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#show_comment").click(function(){
+		$("#edit_comment").toggle("slow");
+	});
+});
+</script>
+<style type="text/css">
+
+</style>
+<%if @vehicle.checked_out==1%>
+<h3>Currently checked out (ya cant use it!) | <%= link_to "Create a new reservation", :action => 'new', :controller=>'reservations',:id=>@vehicle.vehicleID %></h3>
+<%end%>
+	<% if @reservations.length>0 %>
+		<div id="top">
+
+	<h3>This vehicle as been reserved!</h3>
+	<p><div id="current_reservations">
+		<h4>Details:</h4>
+		<table>
+		  <tr>
+		    <th>Vehicle (id)</th>
+		    <th>User</th>
+		    <th>Reserved From</th>
+		    <th>Reserved Until</th>
+			<th>Notes</th>
+			<th>Fulfill</th>
+		  </tr>
+		<% @reservations.each do |r| %>
+			<tr>
+				<td><%=r.vehicle_id%></td>
+				<td><%= r.user_id%></td>
+				<td><%= r.reserved_from%></td>
+				<td><%= r.reserved_until%></td>
+				<td><%= r.comments%></td>
+				<td><%= link_to "Fulfill", :controller=>'trips',:action => 'new',:id=>r.vehicle_id, :reservation_id=>r.id%></td>
+			</tr>
+		<%end%>
+		</table>
+	</div>
+	<%end%>
+	
+<div id="left">
+<p>
+  <b>Vehicleid:</b>
+  <%=h @vehicle.vehicleID %>
+</p>
+
+<p>
+  <b>Year made:</b>
+  <%=h @vehicle.year_made %>
+</p>
+
+<p>
+  <b>Make:</b>
+  <%=h @vehicle.make %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%=h @vehicle.model %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%=h @vehicle.owner %>
+</p>
+
+<p>
+  <b>Alias:</b>
+  <%=h @vehicle.alias %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%=h @vehicle.image_url %>
+</p>
+<p>
+  <b>Parking Tag ID:</b>
+  <%=h @vehicle.parking_id %>
+</p>
+
+<p>
+	<%if @vehicle.checked_out ==1
+		@t = Trip.find_current_trips
+		@t.each do |r|
+			if r.vehicle_id == @vehicle.vehicleID
+			@check_in_id = r.trip_id
+			@r=r
+				if r.comments?
+					@comments = r.comments
+				end
+		%>
+  				<b>Checked out at:</b>
+  				<%= r.check_out_time %>
+				<%t=Time.now
+				difference=t-r.check_out_time
+				dif=difference/60
+				if dif.to_i > 120 
+													dang= ". Dang!"
+												else
+													dang="."
+				end
+				%>
+				    <p><b>Time out: <%=dif.to_i%> minutes<%=dang%></b>
+					</p>
+  				
+			<%end%>
+		<%end%>
+	<%end%>
+</p>
+<p>
+
+	  <b>Trip Comments</b>
+	  <%if !@t.nil?%>
+		<%if !@r.comments.nil?%>
+	    	<%=h @r.comments %>
+	<br />
+		<a href="#" id="show_comment">Edit Comment</a>
+	<%else%>
+	<br />
+		<a href="#" id="show_comment">Add Comment</a>
+	
+	<%end%>
+		<div id="edit_comment">
+		<% form_for(@r) do |f| %>
+		  <p>
+		    <%= f.label :comments %><br />
+		    <%= f.text_area :comments %>
+		  </p>
+		  <p>
+		    <%= f.submit 'Update Comment' %>
+		  </p>
+		</div>
+		<% end %>
+	
+  </p>
+
+
+
+		<%= link_to 'CHECK IN', {:controller =>'trips', :action=>'return', :id =>@check_in_id}, :confirm => "Check in "+ 			@vehicle.alias+" "+ @vehicle.vehicleID+"?"  %>
+	<%else%>
+		No current trips
+	<%end%>
+	<style type="text/css">
+	#needs_attention
+	{
+		width:350px;
+		margin:10px auto 10px 0;
+		background-color:yellow;
+	}
+	#service_comments
+	{
+		display:none;
+		margin-left:10px;
+	}
+	</style>
+	<div id="needs_attention">
+		Update the gas and service details:
+		<% form_for(@vehicle) do |f| %>
+		<p><%= f.label :needs_gas%><br />
+			<%= f.check_box :needs_gas%>
+		</p>
+		<p><%= f.label :needs_service%><br />
+			<%= f.check_box :needs_service, :onclick=>"$(this).is(':checked') && $('#service_comments').slideDown('slow')  || $('#service_comments').slideUp('slow');" %>
+			<p>
+			<%if !@vehicle.service_comments.nil?%>
+				<%=@vehicle.service_comments%>
+			<%end%>
+			</p>
+		</p>
+		<div id="service_comments">
+			<p> 
+			<%= f.label :service_comments %>: What's wrong?<br />
+			<%= f.text_area :service_comments, :size => "35x8"%>
+			</p>
+
+		</div>
+		  <p>
+		    <%= f.submit 'Update Details (This will not check in the vehicle)' %>
+		  </p>
+	</div>
+	<%end%>
+</div> <!-- / #left-->
+<div id='right'>
+
+<img src="<%=@vehicle.image_url%>">
+<p><i><%=@vehicle.alias%></i></p>
+
+</div>

@@ -1,0 +1,31 @@
+<h1>Return from trip</h1>
+
+<% form_for(@trip) do |f| %>
+  <%= f.error_messages %>
+<p>
+    Enter <%= f.label :check_in_time %>:<br />
+    <%= f.datetime_select :check_in_time %>
+  </p>
+  <p>
+    <%= @trip.id%>
+  </p>
+  <p>
+    <%= @trip.vehicle_id%>
+  </p>
+  <p>
+    <%= @trip.destination_name%>
+  </p>
+  <p>
+    <%= @trip.myid%>
+  </p>
+  <p>
+    <%= @trip.check_out_time%>
+  </p>
+  
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @trip %> |
+<%= link_to 'Back', trips_path %>

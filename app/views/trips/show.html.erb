@@ -1,0 +1,125 @@
+<head>
+    <meta http-equiv="refresh" content="300;url=/trips">
+</head>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#show_comment").click(function(){
+		$("#edit_comment").toggle("slow");
+	});
+	var d = new Date();
+	var curr_date=d.getDate()
+	var curr_month=1 + d.getMonth()
+	var curr_year=d.getFullYear()
+	var nice_date = 'On ' + curr_month + '/' + curr_date + '/' + curr_year + ': '
+	$("#vehicle_service_comments").prepend(nice_date);
+});
+</script>
+<style type="text/css">
+#needs_attention
+{
+	width:500px;
+	margin:10px auto 10px 0;
+	background-color:yellow;
+}
+#service_comments
+{
+	display:none;
+	margin:0 auto;
+	width:400px;
+}
+</style>
+<div id="needs_attention">
+	
+	Does this vehicle need gas or service?
+	<% form_for(@vehicle) do |f| %>
+	<p><%= f.label :needs_gas%><br />
+		<%= f.check_box :needs_gas%>
+	</p>
+	<p><%= f.label :needs_service%><br />
+		<%= f.check_box :needs_service, :onclick=>"$(this).is(':checked') && $('#service_comments').slideDown('slow') || $('#service_comments').slideUp('slow');" %> 
+		<p>
+		<%if !@vehicle.service_comments.nil?%>
+			<%=@vehicle.service_comments%>
+		<%end%>
+		</p>
+		
+	</p>
+	<div id="service_comments">
+		<p> 
+		<%= f.label :service_comments %>: What's wrong?<br />
+		<%= f.text_area :service_comments, :size => "45x8"%>
+		</p>
+		
+	</div>
+	  <p>
+	    <%= f.submit 'Update' %>
+	  </p>
+</div>
+<%end%>
+<p>
+  <b>Trip:</b>
+  <%=h @trip.trip_id %>
+</p>
+
+<p>
+  <b>Vehicle:</b>
+  <%=h @trip.vehicle_id %>
+</p>
+
+<p>
+  <b>Destination name:</b>
+  <%=h @trip.destination_name %>
+</p>
+
+<p>
+  <b>Myid:</b>
+  <%=h @trip.myid %>
+</p>
+
+<p>
+  <b>Check out time:</b>
+  <%=h @trip.check_out_time %>
+</p>
+
+<p>
+	<%if @trip.check_in_time!=nil%>
+  <b>Check in time:</b>
+  <%=h @trip.check_in_time %>
+	<%end%>
+	
+</p>
+<p>
+    <b>Comments</b>
+	<%if @trip.comments?%>
+    	<%=h @trip.comments %>
+<br />
+		<a href="#" id="show_comment">Edit Comment</a>
+	<%else%>
+	<br />
+		<a href="#" id="show_comment">Add Comment</a>
+	
+	<%end%>
+		<div id="edit_comment">
+		<% form_for(@trip) do |f| %>
+		  <p>
+		    <%= f.label :comments %><br />
+		    <%= f.text_area :comments %>
+		  </p>
+		  <p>
+		    <%= f.submit 'Update Comment' %>
+		  </p>
+		</div>
+		<% end %>
+  </p>
+<%if @trip.check_in_time==nil%>
+ 
+	<b>
+		<%= link_to 'CHECK IN', :action => 'return', :id => @trip.id %></b>
+<%end%>
+<%if @trip.check_in_time!=nil%>	    
+</p>
+<%= link_to 'Edit', edit_trip_path(@trip) %> |
+<%end%> 
+<%= link_to 'Back', trips_path %>

@@ -1,0 +1,98 @@
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#show_comment").click(function(){
+		$("#edit_comment").toggle("slow");
+	});
+});
+</script>
+<h3>Creating a new reservation | 
+<%if !params[:id].nil? %>
+<% @v = Vehicle.find(params[:id])%>
+	<%if @v.checked_out==1%> <%=@v.alias%> <%= link_to 'currently checked out', :back%> 
+		<%else%>
+		<%= link_to "Create a new trip", :action => 'new', :controller=>'trips',:id=>params[:id] %>
+	<%end%>
+	
+<%else%>
+<%= link_to "Create a new trip", :action => 'new', :controller=>'trips' %>
+<%end%>
+</h3>
+<div id="left">
+
+<% form_for(@reservation) do |f| %>
+  <%= f.error_messages %>
+
+  
+  <p>
+      <%if params[:id].nil? %>
+    <%= select(:reservation, :vehicle_id, Vehicle.find(:all).collect { |v| [v.alias + v.vehicleID, v.vehicleID]}, options ={:prompt =>'Select a vehicle'})%><br />
+	<%else%>
+	
+	<% @message = ["god-speed", "you go get 'em!", "if you can't do it, no one can!", "just get out of here already", "pork chop sandwiches", "away!", "don't let me see you at butt-hutt", "don't forget your towel", "into the great wide open", ]
+	%>
+	
+	<%= f.label @v.alias + ", " + @message.rand + "<br />"%>
+	 <%= select(:reservation, :vehicle_id,  [@v.vehicleID])%><br />
+	<%end%>
+	
+  </p>
+  
+  <p>
+    <%= select(:reservation, :user_id, User.find(:all).collect { |u| [u.myid, u.myid]}, options ={:prompt =>'Select a user'})%><br />
+    
+  </p>
+<p>
+    <%= f.label :reserved_from %><br />
+    <%= f.datetime_select :reserved_from, :order=>[:month, :day, :year] %>
+  </p>
+  <p>
+    <%= f.label :reserved_until %><br />
+    <%= f.datetime_select :reserved_until, :order=>[:month, :day, :year] %>
+  </p>
+ <p>
+    <b>Comments</b>
+	<%if @reservation.comments?%>
+    	<%=h @reservation.comments %>
+<br />
+		<a href="#" id="show_comment">Edit Comment</a>
+	<%else%>
+	<br />
+		<a href="#" id="show_comment">Add Comment</a>
+
+	<%end%>
+		<div id="edit_comment">
+		  <p>
+		    <%= f.label :comments %><br />
+		    <%= f.text_area :comments %>
+		  </p>
+		  <p>
+		  </p>
+		</div>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', :back %></div>
+<div id='right'>
+<%if !params[:id].nil? %>
+<div id="attention">
+	<% if @v.needs_gas==1%>
+		<%= link_to image_tag("needs_gas.png"), :controller=>'vehicles', :action=>'show', :id=>@v.vehicleID%> This vehicle needs 			gas!
+		<%end%>
+	<% if @v.needs_service==1%>
+	<span style="margin-left:10px">
+		<% if !@v.service_comments.nil?%>
+		<%= link_to image_tag("needs_service.png"), {:controller=>'vehicles', :action=>'show', :id=>@v.vehicleID}, :title=>@v.service_comments, :class=>"tooltip"%> This vehicle needs 	service!
+		<%else%>
+			<%= link_to image_tag("needs_service.png"), :controller=>'vehicles', :action=>'show', :id=>@v.vehicleID%> This vehicle needs 	service!
+		<%end%>
+	</span>
+	<%end%>
+</div>
+<img src="<%=@v.image_url%>">
+<p><i><%=@v.alias%></i></p>
+<%end%>
+</div>
