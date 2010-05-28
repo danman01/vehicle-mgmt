@@ -62,12 +62,58 @@ font-size:10px;
 }
 
 </style>
+<%if !params[:group].nil? %>
+	<%if params[:group]!="" %>
+	<b style="font-size:22px;">Currently viewing <%=params[:group]%> vehicles</b>
+	<%end%>
+ <%end%>
 	<div id="top_container">
+		<div id="vehicle_filter">
+			<% form_for :user_group, :url => { :controller=>"users", :action=>'filter' } do |form| %>
+			<%= form.label :user_group, "Filter by User Group:"%>
+			<%=
+				form.select :user_group,
+							User::USER_GROUPS,
+							:prompt =>"Show All / Select Group:"
+			%>
+			<%= submit_tag "filter"%>
+			<%end%>
+				
+				
+					
+		</div>
 		<div style="text-align:center" id="carousel" class="jcarousel-skin-ie7"><h3>Select a Vehicle:</h3>
 			<ul>
+				<% 
+				grouped_vehicles=[]
+				gas=""
+				service=""
+				%>
+			<%if !params[:group].nil? %>
+			
+				<%if params[:group]!="" %>
+					<% @checked_in_vehicles.each do |v|%>
+						<%if v.owner==params[:group]
+							grouped_vehicles << v
+						  end
+					    %>
+					
+					
+				  <%end%>
+				<%else%>
 					<% @checked_in_vehicles.each do |v| 
-						gas=""
-						service=""
+						grouped_vehicles << v 
+						end
+					%>
+				<%end%>
+			<%else%>
+					<% @checked_in_vehicles.each do |v| 
+						grouped_vehicles << v 
+						end
+					%>
+			<%end%>
+				<% grouped_vehicles.each do |v|
+				
 					if v.needs_gas==1
 						gas="<img src='/images/needs_gas.png' class='needs_attention tooltip' title='needs gas' alt='needs gas'/>"
 					end	
@@ -79,11 +125,35 @@ font-size:10px;
 					end
 					%>
 					
+					
 					<li class="green_box" style="width:185px" ><%= link_to image_tag(v.image_url)+'<br/>'+ gas + service + v.alias + " " + v.vehicleID, {:action => 'new', :id=>v.vehicleID}%></li>
 					<%end%>
-					<% @checked_out_vehicles.each do |v| 
-						gas=""
-						service=""
+						<% grouped_vehicles=[]%>
+					<%if !params[:group].nil? %>
+					
+						<%if params[:group]!="" %>
+							<% @checked_out_vehicles.each do |v|%>
+								<%if v.owner==params[:group]
+									grouped_vehicles << v
+								  end
+							    %>
+
+
+						  <%end%>
+						<%else%>
+							<% @checked_out_vehicles.each do |v| 
+								grouped_vehicles << v 
+								end
+							%>
+						<%end%>
+					<%else%>
+							<% @checked_out_vehicles.each do |v| 
+								grouped_vehicles << v 
+								end
+							%>
+					<%end%>
+						<% grouped_vehicles.each do |v| 
+						
 					if v.needs_gas==1
 						gas="<img src='/images/needs_gas.png' class='needs_attention tooltip' title='needs gas' alt='needs gas'/>"
 					end	

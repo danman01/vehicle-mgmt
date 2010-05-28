@@ -85,6 +85,16 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def filter #filter vehicles by user group
+    if !params[:user_group].nil?
+      redirect_to :controller=>"trips", :action=>"index", :group=>params[:user_group][:user_group]
+    else
+      flash[:notice]="Select a group!"
+      redirect_to :controller=>'users', :action=>'index'
+    end
+  end
+  
   def log_out
 		@user = User.find(params[:id])
 		new = {:logged_in => 0}
