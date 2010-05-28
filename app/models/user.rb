@@ -8,11 +8,12 @@ class User < ActiveRecord::Base
 	
 end
 
+
 # == Schema Information
 #
 # Table name: users
 #
-#  myid       :string(40)      primary key
+#  myid       :string(40)
 #  user_fname :string(50)
 #  user_lname :string(50)
 #  user_email :string(50)
