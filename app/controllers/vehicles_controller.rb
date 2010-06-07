@@ -44,7 +44,9 @@ class VehiclesController < ApplicationController
   # POST /vehicles.xml
   def create
     @vehicle = Vehicle.new(params[:vehicle])
-
+    if @vehicle.image_url=='/images/'
+      @vehicle.image_url='/images/5_Le_car_modele.jpg'
+    end
     respond_to do |format|
       if @vehicle.save
         flash[:notice] = 'Vehicle was successfully created.'

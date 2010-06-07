@@ -16,48 +16,7 @@ $(document).ready(function(){
 	$("#vehicle_service_comments").prepend(nice_date);
 });
 </script>
-<style type="text/css">
-#needs_attention
-{
-	width:500px;
-	margin:10px auto 10px 0;
-	background-color:yellow;
-}
-#service_comments
-{
-	display:none;
-	margin:0 auto;
-	width:400px;
-}
-</style>
-<div id="needs_attention">
-	
-	Does this vehicle need gas or service?
-	<% form_for(@vehicle) do |f| %>
-	<p><%= f.label :needs_gas%><br />
-		<%= f.check_box :needs_gas%>
-	</p>
-	<p><%= f.label :needs_service%><br />
-		<%= f.check_box :needs_service, :onclick=>"$(this).is(':checked') && $('#service_comments').slideDown('slow') || $('#service_comments').slideUp('slow');" %> 
-		<p>
-		<%if !@vehicle.service_comments.nil?%>
-			<%=@vehicle.service_comments%>
-		<%end%>
-		</p>
-		
-	</p>
-	<div id="service_comments">
-		<p> 
-		<%= f.label :service_comments %>: What's wrong?<br />
-		<%= f.text_area :service_comments, :size => "45x8"%>
-		</p>
-		
-	</div>
-	  <p>
-	    <%= f.submit 'Update' %>
-	  </p>
-</div>
-<%end%>
+<%= render :partial=>"vehicles/needs_attention"%>
 <p>
   <b>Trip:</b>
   <%=h @trip.trip_id %>
@@ -116,7 +75,7 @@ $(document).ready(function(){
 <%if @trip.check_in_time==nil%>
  
 	<b>
-		<%= link_to 'CHECK IN', :action => 'return', :id => @trip.id %></b>
+		<%= button_to 'CHECK IN', :action => 'return', :id => @trip.id %></b>
 <%end%>
 <%if @trip.check_in_time!=nil%>	    
 </p>

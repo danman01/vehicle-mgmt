@@ -31,7 +31,7 @@
 <%= yield %>
 	</div>
 	<div id="footer">
-	<h6>Powered by STS | <%=link_to "BACK TO VEHICLE CHECK OUT", "/"%> | <%=link_to 'Admin Login', "/login"%></h6>
+	<h6>Powered by STS | <%=link_to_unless_current("HOME PAGE", "/", :style=>'font-size:16px')%> | <%=link_to 'Admin Login', "/login"%></h6>
 	</div>
 	
 </body>

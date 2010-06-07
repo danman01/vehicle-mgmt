@@ -33,12 +33,20 @@ $(document).ready(function(){
     <%= f.text_field :model, :size=>20 %>
   </p>
   <p>
-    <%= f.label :owner %><br />
-    <%= f.text_field :owner %> (STS, NOC, etc)
+    	<%= f.label 'Select Owner:'%>
+		<%=
+			f.select :owner,
+						User::USER_GROUPS,
+						:prompt =>"Select Owner: "
+		%>
   </p>
   <p>
     <%= f.label :alias %><br />
     <%= f.text_field :alias, :size=>20 %>
+  </p>
+<p>
+    Parking ID # <br />
+    <%= f.text_field :parking_id, :size=>20 %>
   </p>
   <p>
     <%= f.label :image_url %><br />
