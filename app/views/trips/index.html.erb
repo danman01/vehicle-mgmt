@@ -84,91 +84,12 @@ font-size:10px;
 		</div>
 		<div style="text-align:center" id="carousel" class="jcarousel-skin-ie7"><h3>Select a Vehicle:</h3>
 			<ul>
-				<% 
-				grouped_vehicles=[]
-				gas=""
-				service=""
-				%>
-			<%if !params[:group].nil? %>
-			
-				<%if params[:group]!="" %>
-					<% @checked_in_vehicles.each do |v|%>
-						<%if v.owner==params[:group]
-							grouped_vehicles << v
-						  end
-					    %>
-					
-					
-				  <%end%>
-				<%else%>
-					<% @checked_in_vehicles.each do |v| 
-						grouped_vehicles << v 
-						end
-					%>
-				<%end%>
-			<%else%>
-					<% @checked_in_vehicles.each do |v| 
-						grouped_vehicles << v 
-						end
-					%>
-			<%end%>
-				<% grouped_vehicles.each do |v|
+				<%= render :partial=>"trips/init_green"%> <%# checked in vehicles %>
 				
-					if v.needs_gas==1
-						gas="<img src='/images/needs_gas.png' class='needs_attention tooltip' title='needs gas' alt='needs gas'/>"
-					end	
+				<%= render :partial=>"trips/init_red"%> <%# checked out vehicles %>
 					
-					if v.needs_service==1 and !v.service_comments.nil?
-						service="<img src='/images/needs_service.png' class='needs_attention tooltip' title='" + v.service_comments + "' alt='needs service' />"
-					elsif v.needs_service==1
-						service="<img src='/images/needs_service.png' class='needs_attention tooltip' title='needs service' alt='needs service' />"
-					end
-					%>
-					
-					
-					<li class="green_box" style="width:185px" ><%= link_to image_tag(v.image_url)+'<br/>'+ gas + service + v.alias + " " + v.vehicleID, {:action => 'new', :id=>v.vehicleID}%></li>
-					<%end%>
-						<% grouped_vehicles=[]%>
-					<%if !params[:group].nil? %>
-					
-						<%if params[:group]!="" %>
-							<% @checked_out_vehicles.each do |v|%>
-								<%if v.owner==params[:group]
-									grouped_vehicles << v
-								  end
-							    %>
-
-
-						  <%end%>
-						<%else%>
-							<% @checked_out_vehicles.each do |v| 
-								grouped_vehicles << v 
-								end
-							%>
-						<%end%>
-					<%else%>
-							<% @checked_out_vehicles.each do |v| 
-								grouped_vehicles << v 
-								end
-							%>
-					<%end%>
-						<% grouped_vehicles.each do |v| 
-						
-					if v.needs_gas==1
-						gas="<img src='/images/needs_gas.png' class='needs_attention tooltip' title='needs gas' alt='needs gas'/>"
-					end	
-					
-					if v.needs_service==1 and !v.service_comments.nil?
-						service="<img src='/images/needs_service.png' class='needs_attention tooltip' title='" + v.service_comments + "' alt='needs service' />"
-					elsif v.needs_service==1
-						service="<img src='/images/needs_service.png' class='needs_attention tooltip' title='needs service' alt='needs service' />"
-					end
-					%>
-					
-					<li class="red_box" style="width:185px" ><%= link_to image_tag(v.image_url)+'<br/>'+ gas+ service + v.alias + " " + v.vehicleID, v%></li>
-					
-					<%end%>
-				</ul>
+				
+			</ul>
 		
 		</div>
 	</div>

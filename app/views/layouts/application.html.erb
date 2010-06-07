@@ -17,9 +17,6 @@
 <body>
 	<h5>TRUCK APP V. 17.1 Release Candidate X </h5>
 	<div id="container">
-	<% unless flash[:notice].nil? %>
-	<%= flash[:notice]%>
-	<%end%>
 	<% unless flash[:message].nil? %>
 	<%= flash[:message]%>
 	<%end%>
@@ -27,9 +24,10 @@
 	<%= flash[:error]%>
 	<%end%>
 
-		
-<p style="color: green"><%= flash[:notice] %></p>
+	<% unless flash[:notice].nil? %>
 
+<p style="color: green"><%= flash[:notice] %></p>
+    <%end%>
 <%= yield %>
 	</div>
 	<div id="footer">
