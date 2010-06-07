@@ -1,0 +1,51 @@
+<style type="text/css">
+#needs_attention
+{
+	width:350px;
+	margin:10px auto 10px 0;
+	padding:10px 10px 10px 10px;
+	border: solid 1px #ccc;
+}
+#needs_attention img
+{
+	height:24px;
+}
+#needs_attention label
+{
+	background-color:yellow;
+}
+#service_comments
+{
+	display:none;
+	margin-left:10px;
+}
+</style>
+<div id="needs_attention">
+	Update the gas and service details:
+	<% form_for(@vehicle) do |f| %>
+	<p><%= f.label :needs_gas%>?<br />
+	<img src='/images/needs_gas.png' class='needs_attention tooltip' title='needs gas' alt='needs gas'/>
+	<%= f.check_box :needs_gas%>
+	</p>
+	<p><%= f.label :needs_service%>?<br />
+		<img src='/images/needs_service.png' class='needs_attention tooltip' title='needs service' alt='needs service' />
+		
+		<%= f.check_box :needs_service, :onclick=>"$(this).is(':checked') && $('#service_comments').slideDown('slow')  || $('#service_comments').slideUp('slow');" %>
+		<p>
+		<%if !@vehicle.service_comments.nil? && @vehicle.needs_service==1%>
+			comments: <%=@vehicle.service_comments%>
+		<%end%>
+		</p>
+	</p>
+	<div id="service_comments">
+		<p> 
+		<%= f.label :service_comments %>: What's wrong?<br />
+		<%= f.text_area :service_comments, :size => "35x8"%>
+		</p>
+
+	</div>
+	  <p>
+	    <%= f.submit 'Update Details (This will not check in the vehicle)' %>
+	  </p>
+</div>
+<%end%>

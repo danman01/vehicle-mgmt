@@ -1,0 +1,45 @@
+<% 
+grouped_vehicles=[]
+gas=""
+service=""
+%>
+<%if !params[:group].nil? %>
+
+<%if params[:group]!="" %>
+	<% @checked_out_vehicles.each do |v|%>
+		<%if v.owner==params[:group]
+			grouped_vehicles << v
+		  end
+	    %>
+	
+	
+   <%end%>
+<%else%>
+	<% @checked_out_vehicles.each do |v| 
+		grouped_vehicles << v 
+		end
+	%>
+<%end%>
+<%else%>
+	<% @checked_out_vehicles.each do |v| 
+		grouped_vehicles << v 
+		end
+	%>
+<%end%>
+<% grouped_vehicles.each do |v|
+
+	if v.needs_gas==1
+		gas=link_to "<img src='/images/needs_gas.png' class='needs_attention tooltip' title='needs gas' alt='needs gas'/>", :controller=>'vehicles',:action=>'show', :id=>v
+	end	
+	
+	if v.needs_service==1 and v.service_comments!=""
+		service=link_to "<img src='/images/needs_service.png' class='needs_attention tooltip' title='needs service: " + v.service_comments + "' alt='needs service' />", :controller=>'vehicles',:action=>'show', :id=>v
+	elsif v.needs_service==1
+		service=link_to "<img src='/images/needs_service.png' class='needs_attention tooltip' title='needs service' alt='needs service' />", :controller=>'vehicles',:action=>'show', :id=>v
+	end
+	%>
+
+	<li class="red_box" style="width:185px" ><%= link_to image_tag(v.image_url)+'<br/>'+ gas+ service + v.alias + " " + v.vehicleID, v%></li>
+	<%gas=""
+	service=""%>
+	<%end%>
