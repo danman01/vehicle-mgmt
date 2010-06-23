@@ -3,6 +3,8 @@ class Vehicle < ActiveRecord::Base
 	has_many :trips
 	has_many :reservations
 	
+	validates_uniqueness_of :parking_id
+	validates_uniqueness_of :hows_my_driving
 	
 	
 	def self.checked_out

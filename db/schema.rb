@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100504192801) do
+ActiveRecord::Schema.define(:version => 20100623135749) do
 
   create_table "locations", :primary_key => "building_dbid", :force => true do |t|
     t.string "building_number", :limit => 10
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20100504192801) do
     t.text     "service_comments"
     t.datetime "service_timestamp"
     t.string   "parking_id"
+    t.string   "hows_my_driving"
   end
 
   add_index "vehicles", ["vehicleID"], :name => "sqlite_autoindex_vehicles_1", :unique => true

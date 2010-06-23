@@ -6772,3 +6772,222 @@ ActionController::UnknownAction (No action responded to images. Actions: check_i
   
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-06-23 09:42:05) [GET]
+  [4;36;1mTrip Load (61.5ms)[0m   [0;1mSELECT * FROM "trips" [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;36;1mVehicle Load (0.4ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;35;1mVehicle Load (0.4ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;36;1mVehicle Load (0.1ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;35;1mReservation Load (0.3ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+Rendered trips/_init_green (5.3ms)
+Rendered trips/_init_red (2.4ms)
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '95008') LIMIT 1[0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."name" = 'Peabody Hall') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'whelchel') LIMIT 1[0m
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94237') LIMIT 1[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."name" = 'Four Towers') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'dwflint') LIMIT 1[0m
+Completed in 311ms (View: 110, DB: 65) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 09:42:06) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VehiclesController#edit (for 127.0.0.1 at 2010-06-23 09:42:29) [GET]
+  Parameters: {"id"=>"94237"}
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+Rendering template within layouts/application
+Rendering vehicles/edit
+Rendered vehicles/_needs_attention (17.7ms)
+Completed in 49ms (View: 40, DB: 0) | 200 OK [http://localhost/vehicles/edit/94237]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 09:42:29) [GET]
+
+ActionController::RoutingError (No route matches "/vehicles/edit/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"=94237)) [0m
+  [4;36;1mVehicle Load (0.5ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"=94327)) [0m
+
+
+Processing VehiclesController#edit (for 127.0.0.1 at 2010-06-23 09:43:57) [GET]
+  Parameters: {"id"=>"94237"}
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+Rendering template within layouts/application
+Rendering vehicles/edit
+Rendered vehicles/_needs_attention (3.6ms)
+Completed in 28ms (View: 21, DB: 0) | 200 OK [http://localhost/vehicles/edit/94237]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 09:43:58) [GET]
+
+ActionController::RoutingError (No route matches "/vehicles/edit/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VehiclesController#edit (for 127.0.0.1 at 2010-06-23 09:44:03) [GET]
+  Parameters: {"id"=>"94237"}
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+Rendering template within layouts/application
+Rendering vehicles/edit
+Rendered vehicles/_needs_attention (2.9ms)
+Completed in 26ms (View: 20, DB: 0) | 200 OK [http://localhost/vehicles/edit/94237]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 09:44:04) [GET]
+
+ActionController::RoutingError (No route matches "/vehicles/edit/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to SetDefaultFulfilled2 (20100205163855)
+Migrating to AddReservationIdToTrips (20100205170632)
+Migrating to CreateLocationsTripsJoin (20100209200224)
+Migrating to CreateReservationsTable (20100224150850)
+Migrating to AddReservedToVehicles (20100225210403)
+Migrating to AddServiceToVehicles (20100316181453)
+Migrating to AddServiceCommentsToVehicle (20100318133531)
+Migrating to AddServiceTimeStampToVehicles (20100318143938)
+Migrating to AddParkingIdToVehicles (20100504192801)
+Migrating to AddHowsMyDrivingToVehicle (20100623135749)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (11.3ms)[0m   [0mALTER TABLE "vehicles" ADD "hows_my_driving" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100623135749')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("locations")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("locations_trips")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("reservations")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("trips")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('sqlite_autoindex_users_1')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("vehicles")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('sqlite_autoindex_vehicles_1')[0m
+
+
+Processing VehiclesController#edit (for 127.0.0.1 at 2010-06-23 10:01:35) [GET]
+  Parameters: {"id"=>"94237"}
+  [4;35;1mVehicle Load (0.5ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+Rendering template within layouts/application
+Rendering vehicles/edit
+Rendered vehicles/_needs_attention (2.9ms)
+Completed in 57ms (View: 31, DB: 1) | 200 OK [http://localhost/vehicles/edit/94237]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 10:01:35) [GET]
+
+ActionController::RoutingError (No route matches "/vehicles/edit/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VehiclesController#update (for 127.0.0.1 at 2010-06-23 10:02:32) [PUT]
+  Parameters: {"commit"=>"Update", "vehicle"=>{"model"=>"Windstar", "vehicleID"=>"94237", "checked_out"=>"1", "image_url"=>"/images/94237.jpg", "year_made"=>"2002", "parking_id"=>"11047036", "hows_my_driving"=>"906LR", "alias"=>"Power Van", "make"=>"Ford", "owner"=>"STS"}, "authenticity_token"=>"3O0+vEJrmZ3nCaAkTBz6YxtfzzGr3zFp43y8IJTeLGQ=", "id"=>"94237"}
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."parking_id" = '11047036' AND "vehicles".vehicleID <> '94237') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."hows_my_driving" = '906LR' AND "vehicles".vehicleID <> '94237') [0m
+  [4;35;1mVehicle Update (0.4ms)[0m   [0mUPDATE "vehicles" SET "hows_my_driving" = '906LR', "alias" = 'Power Van', "needs_gas" = 0, "service_comments" = '', "reserved" = 0, "checked_out" = 1, "image_url" = '/images/94237.jpg', "needs_service" = 1, "service_timestamp" = NULL, "year_made" = 2002, "model" = 'Windstar', "parking_id" = '11047036', "make" = 'Ford', "owner" = 'STS' WHERE ("vehicleID" = '94237')[0m
+Redirected to http://localhost:3000/vehicles/94237
+Completed in 28ms (DB: 1) | 302 Found [http://localhost/vehicles/94237]
+
+
+Processing VehiclesController#show (for 127.0.0.1 at 2010-06-23 10:02:32) [GET]
+  Parameters: {"id"=>"94237"}
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+  [4;35;1mReservation Load (0.6ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) AND (("reservations"."vehicle_id" = '94237')) [0m
+Rendering template within layouts/application
+Rendering vehicles/show
+  [4;36;1mTrip Load (1.1ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+Rendered vehicles/_needs_attention (14.3ms)
+Completed in 205ms (View: 180, DB: 2) | 200 OK [http://localhost/vehicles/94237]
+
+
+Processing VehiclesController#images to gif (for 127.0.0.1 at 2010-06-23 10:02:33) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: check_in, check_out, create, destroy, edit, index, new, release_hold, reserve, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VehiclesController#show (for 127.0.0.1 at 2010-06-23 10:06:47) [GET]
+  Parameters: {"id"=>"94237"}
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+  [4;36;1mReservation Load (0.3ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) AND (("reservations"."vehicle_id" = '94237')) [0m
+Rendering template within layouts/application
+Rendering vehicles/show
+  [4;35;1mTrip Load (0.8ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+Rendered vehicles/_needs_attention (3.0ms)
+Completed in 103ms (View: 89, DB: 1) | 200 OK [http://localhost/vehicles/94237]
+
+
+Processing VehiclesController#images to gif (for 127.0.0.1 at 2010-06-23 10:06:48) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: check_in, check_out, create, destroy, edit, index, new, release_hold, reserve, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-06-23 10:08:24) [GET]
+  [4;36;1mTrip Load (60.1ms)[0m   [0;1mSELECT * FROM "trips" [0m
+  [4;35;1mTrip Load (0.6ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;36;1mVehicle Load (0.4ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;35;1mVehicle Load (0.4ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;36;1mVehicle Load (0.1ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;35;1mReservation Load (0.3ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+Rendered trips/_init_green (5.6ms)
+Rendered trips/_init_red (2.5ms)
+  [4;36;1mVehicle Load (0.4ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '95008') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."name" = 'Peabody Hall') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'whelchel') LIMIT 1[0m
+  [4;35;1mVehicle Load (0.4ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94237') LIMIT 1[0m
+  [4;36;1mLocation Load (0.8ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."name" = 'Four Towers') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'dwflint') LIMIT 1[0m
+Completed in 232ms (View: 52, DB: 65) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 10:08:25) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
