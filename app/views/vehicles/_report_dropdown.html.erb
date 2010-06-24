@@ -1,0 +1,6 @@
+<%=link_to "Return to Admin page", "/admin_view"%>
+<%form_for :vehicle, :url=>{:controller=>'vehicles', :action=>'show_report'} do |f| %>
+<%= f.select(:vehicle, Vehicle.find(:all).collect { |v| [v.alias + v.vehicleID, v.vehicleID]}, options ={:prompt =>'Select a vehicle'})%><br /><br />
+<%= f.submit 'Generate Report'%>
+<%end%>
+

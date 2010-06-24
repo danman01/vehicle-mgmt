@@ -25,10 +25,11 @@
   <p>
     	<%= f.label 'Select Owner:'%>
 		<%=
-			f.select :owner,
-						User::USER_GROUPS,
-						:prompt =>"Select Owner: "
+					f.select :owner,
+								Group.find(:all).collect{ |g| [g.name, g.name]},
+								:selected => @vehicle.owner
 		%>
+		 
   </p>
   <p>
     <%= f.label :alias %><br />

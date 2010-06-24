@@ -112,6 +112,31 @@ class VehiclesController < ApplicationController
 	  @vehicle.update_attributes(new)
 	  redirect_to :action =>"index"
 	end
-	
+	def report
+	  
+	end
+	def show_report
+	  @vehicle = Vehicle.find(params[:vehicle][:vehicle])
+	  trips = Trip.find_all_by_vehicle_id(@vehicle.vehicleID)
+	  @total_trips = trips.length
+	  tmp_time = 0
+	  tmp_destination = []
+	  tmp_users = []
+	  for t in trips do 
+	    dif = t.check_in_time - t.check_out_time
+	    tmp_time += dif
+	    tmp_destination << t.destination_name
+	    tmp_users << t.myid
+	  end
+	  #TODO strftime
+	  @total_time = tmp_time
+	  #TODO sort_by grep
+	  @most_visited_locale = tmp_destination.uniq!
+
+    
+	  @most_active_user = tmp_users.uniq!
+
+    
+	end
 	
 end

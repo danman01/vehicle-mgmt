@@ -23,8 +23,11 @@
     <%= f.text_field :user_email %>
   </p>
   <p>
-    <%= f.label :user_group %><br />
-    <%= f.text_field :user_group %>
+    	<%=
+			f.select :user_group,
+						Group.find(:all).collect{ |g| [g.name, g.name]},
+						:selected => @user.user_group
+		%>
   </p>
   <p>
     <%= f.submit 'Update' %>

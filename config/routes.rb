@@ -1,17 +1,20 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :groups
+
   map.resources :reservations
 
   map.resources :trips
   map.show_all '/all', :controller => "trips", :action => "show_all"
   map.login_page '/login', :controller => "users", :action => "login_page"
   map.admin_view '/admin_view', :controller =>'users', :action=>'admin_view'
+  map.report 'vehicles/report', :controller => 'vehicles', :action => 'report'
+  
   map.resources :users
 
   map.resources :locations
 
   map.resources :vehicles
    map.root :controller => 'trips'
-  
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -2,20 +2,16 @@ class User < ActiveRecord::Base
   set_primary_keys :myid
 	has_many :trips
 	has_many :reservations
+	belongs_to :group
 	
 	
-	
-	USER_GROUPS = [
-	  #displayed       stored in db
-	  ["STS",            "STS"],
-	  ["Special Projects", "Special Projects"],
-	  ["NOC",              "NOC"]
-	  
-	  
-	  ]
+	user_groups=[]
+	groups = Group.all
+	for g in groups do
+	  user_groups << g.name
+	end
 	  validates_presence_of :myid, :user_fname, :user_lname, :user_group
-	  validates_inclusion_of :user_group, :in=>
-	    USER_GROUPS.map {|disp, value| value}
+	  validates_inclusion_of :user_group, :in => user_groups
 end
 
 

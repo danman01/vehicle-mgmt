@@ -36,8 +36,8 @@ $(document).ready(function(){
     	<%= f.label 'Select Owner:'%>
 		<%=
 			f.select :owner,
-						User::USER_GROUPS,
-						:prompt =>"Select Owner: "
+						Group.find(:all).collect{ |g| [g.name, g.name]},
+						:prompt => 'Select Owner:'
 		%>
   </p>
   <p>

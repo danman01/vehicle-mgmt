@@ -22,8 +22,11 @@
     <%= f.text_field :user_email %>
   </p>
   <p>
-    <%= f.label :user_group %><br />
-    <%= f.text_field :user_group %>
+    	<%=
+			f.select :user_group,
+						Group.find(:all).collect{ |g| [g.name, g.name]},
+						:prompt => 'Select a User Group'
+		%>
   </p>
   <p>
     <%= f.submit 'Create' %>

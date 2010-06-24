@@ -73,7 +73,7 @@ font-size:10px;
 			<%= form.label :user_group, "Filter by User Group:"%>
 			<%=
 				form.select :user_group,
-							User::USER_GROUPS,
+							Group.find(:all).collect{ |g| [g.name, g.name]},
 							:prompt =>"Show All / Select Group:"
 			%>
 			<%= submit_tag "filter"%>

@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100623135749) do
+ActiveRecord::Schema.define(:version => 20100624154012) do
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.string   "contact"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "locations", :primary_key => "building_dbid", :force => true do |t|
     t.string "building_number", :limit => 10
@@ -42,6 +49,13 @@ ActiveRecord::Schema.define(:version => 20100623135749) do
     t.datetime "check_in_time"
     t.string   "comments"
     t.integer  "reservation_id"
+  end
+
+  create_table "user_groups", :force => true do |t|
+    t.string   "name"
+    t.string   "contact"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :primary_key => "myid", :force => true do |t|

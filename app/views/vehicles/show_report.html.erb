@@ -1,0 +1,12 @@
+<%=link_to "Return to Admin page", "/admin_view"%>
+<%#=render :partial => "report_dropdown", :vehicle =>@vehicle%>
+Report for <%=@vehicle.alias%> (#<%=@vehicle.vehicleID%>:)
+<table>
+<tr><td>Total trips: <%=@total_trips%></td></tr>
+<tr><td>Total time in use: <%=@total_time%></td></tr>
+<tr><td>Most visited locale: <%=@most_visited_locale%></td></tr>
+<tr><td>Most active user: <%=@most_active_user%></td></tr>
+</table>
+
+
+
