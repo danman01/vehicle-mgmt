@@ -130,11 +130,21 @@ class VehiclesController < ApplicationController
 	  end
 	  #TODO strftime
 	  @total_time = tmp_time
-	  #TODO sort_by grep
-	  @most_visited_locale = tmp_destination.uniq!
+	  #TODO sort_by grep, count by each
+	  @most_visited_locale = tmp_destination.uniq.sort_by{|x|tmp_destination.grep(x).size}.reverse
+	  n=0
+	  @count[n]=[]
+	  for each in @most_visited_locale[0..4]
+	    @count[n]<< tmp_destination.grep(each).size
+	    n+=1
+	  end
+    
+	  #.reverse.each{|x|puts "#{x}: 
+    #{tmp_destination.grep(x).size}"}
+    
 
     
-	  @most_active_user = tmp_users.uniq!
+	  @most_active_user = tmp_users.uniq.sort_by{|x|tmp_destination.grep(x).size}.reverse
 
     
 	end

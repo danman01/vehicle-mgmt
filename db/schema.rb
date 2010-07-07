@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100624154012) do
+ActiveRecord::Schema.define(:version => 20100707174032) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -59,13 +59,15 @@ ActiveRecord::Schema.define(:version => 20100624154012) do
   end
 
   create_table "users", :primary_key => "myid", :force => true do |t|
-    t.string  "user_fname", :limit => 50
-    t.string  "user_lname", :limit => 50
-    t.string  "user_email", :limit => 50
-    t.string  "user_group", :limit => 25
-    t.text    "role",                     :default => "normal"
-    t.integer "logged_in",                :default => 0
+    t.string  "user_fname",      :limit => 50
+    t.string  "user_lname",      :limit => 50
+    t.string  "user_email",      :limit => 50
+    t.string  "user_group",      :limit => 25
+    t.text    "role",                          :default => "normal"
+    t.integer "logged_in",                     :default => 0
     t.text    "password"
+    t.string  "hashed_password"
+    t.string  "salt"
   end
 
   add_index "users", ["myid"], :name => "sqlite_autoindex_users_1", :unique => true

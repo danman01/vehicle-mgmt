@@ -16,6 +16,9 @@
 </head>
 <body>
 	<h5>TRUCK APP V. 17.1 Release Candidate X </h5>
+	<%if session[:user_id]%>
+	Logged in as <%=User.find_by_myid(session[:user_id]).user_fname%>
+	<%end%>
 	<div id="container">
 	<% unless flash[:message].nil? %>
 	<%= flash[:message]%>
@@ -31,7 +34,7 @@
 <%= yield %>
 	</div>
 	<div id="footer">
-	<h6>Powered by STS | <%=link_to_unless_current("HOME PAGE", "/", :style=>'font-size:16px')%> | <%=link_to 'Admin Login', "/login"%></h6>
+	<h6>Powered by STS | <%=link_to_unless_current("HOME PAGE", "/", :style=>'font-size:16px')%> | <%if session[:user_id]%><%=link_to 'Logout', :controller=>'admin', :action=>'logout'%><%else%><%=link_to 'Admin Login', "/login"%><%end%></h6>
 	</div>
 	
 </body>

@@ -11,6 +11,14 @@
     <%= f.text_field :myid %>
   </p>
   <p>
+    <%= f.label :password, 'Password' %><br />
+    <%= f.password_field :password, :size=> 20 %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, 'Confirm it!' %><br />
+    <%= f.password_field :password_confirmation, :size=> 20 %>
+  </p>
+  <p>
     <%= f.label :user_fname %><br />
     <%= f.text_field :user_fname %>
   </p>
