@@ -17,7 +17,7 @@
 <body>
 	<h5>TRUCK APP V. 17.1 Release Candidate X </h5>
 	<%if session[:user_id]%>
-	Logged in as <%=User.find_by_myid(session[:user_id]).user_fname%>
+	Logged in as <%=User.find_by_myid(session[:user_id]).user_fname%> | <%=link_to 'Admin Page', :controller=>'admin', :action=>'index'%> | <%=link_to 'Logout', :controller=>'admin', :action=>'logout'%>
 	<%end%>
 	<div id="container">
 	<% unless flash[:message].nil? %>

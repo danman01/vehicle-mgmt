@@ -1,7 +1,7 @@
-<%=link_to "Return to Admin page", "/admin_view"%>
 
 
 <h1>Listing users</h1>
+<p><div style="height:20px; width:20px; background-color:#00ffcc;position:absolute"></div> ==== Admin rights</p>
 
 <table>
   <tr>
@@ -13,7 +13,11 @@
   </tr>
 
 <% @users.each do |user| %>
+  <% if user.role=="admin"%>
+	<tr style="background-color:#00ffcc">
+  <%else%>
   <tr>
+	<%end%>
     <td><%=h user.myid %></td>
     <td><%=h user.user_fname %></td>
     <td><%=h user.user_lname %></td>

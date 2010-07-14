@@ -1,4 +1,5 @@
 class VehiclesController < ApplicationController
+  before_filter :authorize, :except => [:show,:update,:check_out,:check_in,:release_hold]
   # GET /vehicles
   # GET /vehicles.xml
   layout 'application'

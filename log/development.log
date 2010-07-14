@@ -11346,3 +11346,3857 @@ ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" 
   
 
 Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 09:35:37) [GET]
+  [4;36;1mTrip Load (99.9ms)[0m   [0;1mSELECT * FROM "trips" [0m
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;35;1mVehicle Load (0.7ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;36;1mVehicle Load (0.1ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;35;1mReservation Load (0.3ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (22.3ms)
+Rendered trips/_init_red (1.4ms)
+Completed in 541ms (View: 244, DB: 102) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:35:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:35:43) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 42ms (View: 41, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:35:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:36:15) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danman01", "password"=>"horse"}
+  [4;35;1mGroup Load (10.8ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 52ms (DB: 11) | 302 Found [http://localhost/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 09:36:15) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 84ms (View: 16, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:36:15) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 09:36:19) [GET]
+  [4;36;1mTrip Load (57.3ms)[0m   [0;1mSELECT * FROM "trips" [0m
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;35;1mVehicle Load (0.6ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;36;1mVehicle Load (0.1ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;35;1mReservation Load (0.3ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (5.3ms)
+Rendered trips/_init_red (0.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 194ms (View: 24, DB: 60) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:36:20) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#new (for 127.0.0.1 at 2010-07-14 09:36:21) [GET]
+  Parameters: {"id"=>"94132"}
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;36;1mReservation Load (0.3ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."vehicle_id" IN ('94132')) [0m
+Rendering template within layouts/application
+Rendering trips/new
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;36;1mLocation Load (9.3ms)[0m   [0;1mSELECT * FROM "locations" [0m
+  [4;35;1mGroup Load (0.4ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 172ms (View: 48, DB: 12) | 200 OK [http://localhost/trips/new?id=94132]
+
+
+Processing TripsController#images to gif (for 127.0.0.1 at 2010-07-14 09:36:22) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, explain_service, fulfill_reservation_and_create, index, new, return, show, show_all, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#new (for 127.0.0.1 at 2010-07-14 09:38:21) [GET]
+  Parameters: {"id"=>"94132"}
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;35;1mReservation Load (0.3ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."vehicle_id" IN ('94132')) [0m
+Rendering template within layouts/application
+Rendering trips/new
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;35;1mLocation Load (8.7ms)[0m   [0mSELECT * FROM "locations" [0m
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 67ms (View: 41, DB: 11) | 200 OK [http://localhost/trips/new?id=94132]
+
+
+Processing TripsController#images to gif (for 127.0.0.1 at 2010-07-14 09:38:22) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, explain_service, fulfill_reservation_and_create, index, new, return, show, show_all, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2010-07-14 09:42:28) [GET]
+Redirected to http://localhost:3000/login
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admin/logout]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:42:29) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:42:29) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 09:42:32) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+
+NoMethodError (undefined method `hashed_password' for nil:NilClass):
+  app/controllers/admin_controller.rb:25:in `index'
+
+Rendered rescues/_trace (33.3ms)
+Rendered rescues/_request_and_response (15.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:42:42) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:42:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:42:46) [GET]
+
+ActionController::RoutingError (No route matches "/logout" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:42:50) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#images to gif (for 127.0.0.1 at 2010-07-14 09:42:50) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: index, login, and logout):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2010-07-14 09:42:55) [GET]
+Redirected to http://localhost:3000/login
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admin/logout]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:42:55) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:42:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VehiclesController#show (for 127.0.0.1 at 2010-07-14 09:43:04) [GET]
+  Parameters: {"id"=>"edit"}
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='edit')) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find all Vehicles with IDs ([["edit"]])"vehicles"."vehicleID"='edit'):
+  /Users/studenttechsupport/.gem/ruby/1.8/gems/composite_primary_keys-2.3.5.1/lib/composite_primary_keys/base.rb:298:in `find_from_ids'
+  app/controllers/vehicles_controller.rb:19:in `show'
+
+Rendered rescues/_trace (33.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing VehiclesController#index (for 127.0.0.1 at 2010-07-14 09:43:09) [GET]
+  [4;36;1mVehicle Load (1.0ms)[0m   [0;1mSELECT * FROM "vehicles" [0m
+Rendering template within layouts/application
+Rendering vehicles/index
+Completed in 95ms (View: 90, DB: 1) | 200 OK [http://localhost/vehicles/]
+
+
+Processing VehiclesController#images to gif (for 127.0.0.1 at 2010-07-14 09:43:09) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: check_in, check_out, create, destroy, edit, index, new, release_hold, report, reserve, show, show_report, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#admin_view (for 127.0.0.1 at 2010-07-14 09:43:15) [GET]
+Rendering template within layouts/application
+Rendering users/admin_view
+Completed in 30ms (View: 28, DB: 0) | 200 OK [http://localhost/admin_view]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:43:15) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#admin_view (for 127.0.0.1 at 2010-07-14 09:44:29) [GET]
+
+SyntaxError (/Users/studenttechsupport/Documents/vehicle-mgmt/vehicle-mgmt/app/controllers/users_controller.rb:6: syntax error, unexpected tSTRING_BEG, expecting kDO or '{' or '('
+  layout 'application'
+          ^):
+  
+
+Rendered rescues/_trace (30.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#admin_view (for 127.0.0.1 at 2010-07-14 09:44:37) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/admin_view]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:44:37) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:44:37) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:44:43) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danny", "password"=>"hourse"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'danny') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:44:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:44:49) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danman01", "password"=>"hourse"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 16ms (View: 5, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:44:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:44:55) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danman01", "password"=>"horse"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+Redirected to http://localhost:3000/login?%2Fadmin_view=index
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:44:55) [GET]
+  Parameters: {"/admin_view"=>"index"}
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/login?%2Fadmin_view=index]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:44:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:45:03) [GET]
+
+ActionController::RoutingError (No route matches "/ladmin_view=index" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#admin_view (for 127.0.0.1 at 2010-07-14 09:45:08) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/admin_view]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:45:08) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:45:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 09:45:12) [GET]
+  [4;35;1mTrip Load (118.6ms)[0m   [0mSELECT * FROM "trips" [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;36;1mVehicle Load (0.6ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (4.5ms)
+Rendered trips/_init_red (0.1ms)
+Completed in 189ms (View: 26, DB: 121) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:45:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:45:17) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:45:17) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:45:22) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danman01", "password"=>"horse"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+Redirected to http://localhost:3000/login?%2Fadmin_view=index
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:45:22) [GET]
+  Parameters: {"/admin_view"=>"index"}
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/login?%2Fadmin_view=index]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:45:23) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:45:32) [GET]
+  Parameters: {"/admin_view"=>"index"}
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login?%2Fadmin_view=index]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:45:33) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 09:45:36) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danman01", "password"=>"horse"}
+  [4;36;1mGroup Load (0.5ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 09:45:37) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 21ms (View: 5, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:45:37) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 09:46:17) [GET]
+  [4;35;1mGroup Load (0.5ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:46:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 09:46:29) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 109ms (View: 59, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:46:29) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-07-14 09:46:50) [GET]
+  Parameters: {"id"=>"mattb"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='mattb')) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 39ms (View: 29, DB: 1) | 200 OK [http://localhost/users/mattb/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:46:50) [GET]
+
+ActionController::RoutingError (No route matches "/users/mattb/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-07-14 09:48:12) [GET]
+  Parameters: {"id"=>"mattb"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='mattb')) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/users/mattb/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:48:12) [GET]
+
+ActionController::RoutingError (No route matches "/users/mattb/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 09:48:13) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 60ms (View: 49, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:48:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:48:15) [GET]
+
+ActionController::RoutingError (No route matches "/users/mattb/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 09:48:21) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 60ms (View: 49, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:48:21) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mGroup Load (0.5ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-07-14 09:54:04) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (wrong number of arguments (5 for 4)) on line #26 of app/views/users/new.html.erb:
+23:   </p>
+24:   <p>
+25:     <%= f.label :role %><br />
+26:     <%= f.check_box("User Role", "Admin?", {}, "admin", "user")
+27: 	 %>
+28:   </p>
+29:   <p>
+
+    app/views/users/new.html.erb:26:in `check_box'
+    app/views/users/new.html.erb:26
+    app/views/users/new.html.erb:5
+    app/controllers/users_controller.rb:33:in `new'
+
+Rendered rescues/_trace (46.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-07-14 09:54:19) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `merge' for "Admin?":String) on line #26 of app/views/users/new.html.erb:
+23:   </p>
+24:   <p>
+25:     <%= f.label :role %><br />
+26:     <%= f.check_box("User Role", "Admin?", "admin", "user")
+27: 	 %>
+28:   </p>
+29:   <p>
+
+    app/views/users/new.html.erb:26
+    app/views/users/new.html.erb:5
+    app/controllers/users_controller.rb:33:in `new'
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-07-14 09:55:17) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `merge' for "Admin":String) on line #26 of app/views/users/new.html.erb:
+23:   </p>
+24:   <p>
+25:     <%= f.label :role %><br />
+26:     <%= f.check_box("User Role", "Admin", "admin", "user")
+27: 	 %>
+28:   </p>
+29:   <p>
+
+    app/views/users/new.html.erb:26
+    app/views/users/new.html.erb:5
+    app/controllers/users_controller.rb:33:in `new'
+
+Rendered rescues/_trace (47.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-07-14 09:55:35) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `merge' for :role:Symbol) on line #26 of app/views/users/new.html.erb:
+23:   </p>
+24:   <p>
+25:     <%= f.label :role %><br />
+26:     <%= f.check_box("User Role", :role, "admin", "user")
+27: 	 %>
+28:   </p>
+29:   <p>
+
+    app/views/users/new.html.erb:26
+    app/views/users/new.html.erb:5
+    app/controllers/users_controller.rb:33:in `new'
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-07-14 09:55:50) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `merge' for "admin":String) on line #26 of app/views/users/new.html.erb:
+23:   </p>
+24:   <p>
+25:     <%= f.label :role %><br />
+26:     <%= f.check_box(:role, "admin", "admin", "user")
+27: 	 %>
+28:   </p>
+29:   <p>
+
+    app/views/users/new.html.erb:26
+    app/views/users/new.html.erb:5
+    app/controllers/users_controller.rb:33:in `new'
+
+Rendered rescues/_trace (47.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-07-14 09:56:30) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `merge' for "admin":String) on line #26 of app/views/users/new.html.erb:
+23:   </p>
+24:   <p>
+25:     <%= f.label :role %><br />
+26:     <%= f.check_box(:role, "admin", "user")
+27: 	 %>
+28:   </p>
+29:   <p>
+
+    app/views/users/new.html.erb:26
+    app/views/users/new.html.erb:5
+    app/controllers/users_controller.rb:33:in `new'
+
+Rendered rescues/_trace (46.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-07-14 09:56:43) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 88ms (View: 21, DB: 1) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 09:56:43) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: admin_view, create, destroy, edit, filter, index, log_in, log_out, login, login_page, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-07-14 09:56:57) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 21ms (View: 12, DB: 1) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 09:56:57) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: admin_view, create, destroy, edit, filter, index, log_in, log_out, login, login_page, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-07-14 09:58:23) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 09:58:23) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: admin_view, create, destroy, edit, filter, index, log_in, log_out, login, login_page, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 09:58:25) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 128ms (View: 117, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:58:25) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-07-14 09:58:28) [GET]
+  Parameters: {"id"=>"mattb"}
+  [4;35;1mGroup Load (0.5ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='mattb')) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 24ms (View: 14, DB: 1) | 200 OK [http://localhost/users/mattb/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:58:28) [GET]
+
+ActionController::RoutingError (No route matches "/users/mattb/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 09:58:34) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 58ms (View: 48, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:58:35) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-14 09:58:49) [GET]
+  Parameters: {"id"=>"fluffy"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (("users"."myid"='fluffy')) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (role ='admin') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 32ms (View: 21, DB: 2) | 200 OK [http://localhost/users/fluffy]
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 09:58:49) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: admin_view, create, destroy, edit, filter, index, log_in, log_out, login, login_page, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#admin_view (for 127.0.0.1 at 2010-07-14 09:59:01) [GET]
+
+ActionView::MissingTemplate (Missing template users/admin_view.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 09:59:03) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: admin_view, create, destroy, edit, filter, index, log_in, log_out, login, login_page, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:59:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-14 09:59:06) [GET]
+  Parameters: {"id"=>"danman01"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (("users"."myid"='danman01')) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (role ='admin') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/users/danman01]
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 09:59:06) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: admin_view, create, destroy, edit, filter, index, log_in, log_out, login, login_page, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:59:15) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-14 09:59:25) [GET]
+  Parameters: {"id"=>"pkeck"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (("users"."myid"='pkeck')) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (role ='admin') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/users/pkeck]
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 09:59:26) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: admin_view, create, destroy, edit, filter, index, log_in, log_out, login, login_page, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 09:59:29) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2010-07-14 10:00:12) [GET]
+Redirected to http://localhost:3000/login
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admin/logout]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:00:12) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:00:12) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:00:16) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"ahalpern", "password"=>""}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'ahalpern') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 10:00:16) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:00:16) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2010-07-14 10:00:25) [GET]
+Redirected to http://localhost:3000/login
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admin/logout]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:00:25) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:00:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:01:36) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+
+NoMethodError (undefined method `role' for nil:NilClass):
+  app/controllers/admin_controller.rb:4:in `login'
+
+Rendered rescues/_trace (83.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:03:34) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 19ms (View: 17, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:03:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:03:39) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danman01", "password"=>""}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (52.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 69ms (View: 5, DB: 53) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:03:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:06:26) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danman01", "password"=>""}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 17ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:06:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:06:28) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danman01", "password"=>""}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 67ms (View: 5, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:06:28) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:06:31) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"ahalpern", "password"=>""}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'ahalpern') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 10:06:31) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Completed in 16ms (View: 5, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:06:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2010-07-14 10:06:35) [GET]
+Redirected to http://localhost:3000/login
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admin/logout]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:06:35) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:06:35) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:07:24) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:07:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:08:55) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:08:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:09:00) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"ahalpern", "password"=>""}
+  [4;36;1mGroup Load (0.7ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'ahalpern') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 28ms (View: 5, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:09:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:09:05) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danman01", "password"=>""}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 16ms (View: 5, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:09:06) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:09:16) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"mattb", "password"=>""}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'mattb') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 65ms (View: 5, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:09:16) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:09:21) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danman01", "password"=>"horse"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 10:09:21) [GET]
+  [4;36;1mGroup Load (0.7ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 18ms (View: 5, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:09:21) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#index (for 127.0.0.1 at 2010-07-14 10:09:35) [GET]
+  [4;35;1mReservation Load (1.2ms)[0m   [0mSELECT * FROM "reservations" [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 118ms (View: 70, DB: 2) | 200 OK [http://localhost/reservations]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:09:35) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 10:09:59) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:09:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:10:00) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 129ms (View: 119, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:10:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-07-14 10:10:04) [GET]
+  Parameters: {"id"=>"ahalpern"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='ahalpern')) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/users/ahalpern/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:10:04) [GET]
+
+ActionController::RoutingError (No route matches "/users/ahalpern/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-07-14 10:10:06) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "id"=>"ahalpern", "user"=>{"user_group"=>"STS", "password_confirmation"=>"", "role"=>"admin", "user_lname"=>"Halpern", "user_fname"=>"Ashley", "myid"=>"ahalpern", "password"=>"", "user_email"=>"ahalpern@uga.edu"}}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='ahalpern')) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE ("users"."myid" = 'ahalpern' AND "users".myid <> 'ahalpern') [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 25ms (View: 12, DB: 1) | 200 OK [http://localhost/users/ahalpern]
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 10:10:06) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, filter, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-07-14 10:11:18) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "id"=>"ahalpern", "user"=>{"user_group"=>"STS", "password_confirmation"=>"temp", "role"=>"admin", "user_lname"=>"Halpern", "user_fname"=>"Ashley", "myid"=>"ahalpern", "password"=>"temp", "user_email"=>"ahalpern@uga.edu"}}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (("users"."myid"='ahalpern')) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE ("users"."myid" = 'ahalpern' AND "users".myid <> 'ahalpern') [0m
+  [4;35;1mUser Update (13.8ms)[0m   [0mUPDATE "users" SET "role" = 'admin', "salt" = '21816876200.0506377251473158', "user_email" = 'ahalpern@uga.edu', "hashed_password" = '3da0d14fcacf5a2ef930ae9381f0cb17307274b3', "user_fname" = 'Ashley', "user_lname" = 'Halpern', "logged_in" = 0, "password" = NULL, "user_group" = 'STS' WHERE ("myid" = 'ahalpern')[0m
+Redirected to http://localhost:3000/users/ahalpern
+Completed in 30ms (DB: 15) | 302 Found [http://localhost/users/ahalpern]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-14 10:11:18) [GET]
+  Parameters: {"id"=>"ahalpern"}
+  [4;36;1mGroup Load (8.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (("users"."myid"='ahalpern')) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 113ms (View: 31, DB: 9) | 200 OK [http://localhost/users/ahalpern]
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 10:11:18) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, filter, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:11:24) [GET]
+  [4;35;1mTrip Load (64.0ms)[0m   [0mSELECT * FROM "trips" [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;36;1mVehicle Load (0.6ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (4.6ms)
+Rendered trips/_init_red (0.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 211ms (View: 21, DB: 67) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:11:25) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2010-07-14 10:11:26) [GET]
+Redirected to http://localhost:3000/login
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admin/logout]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:11:27) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 13ms (View: 12, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:11:27) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:11:31) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"ahalpern", "password"=>"temp"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'ahalpern') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 10:11:31) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Completed in 67ms (View: 5, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:11:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-07-14 10:11:35) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 10:11:35) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, filter, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (("users"."myid"='ahalpern')) [0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-07-14 10:18:39) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "user"=>{"user_group"=>"STS", "role"=>"user", "user_lname"=>"bill", "user_fname"=>"bill", "myid"=>"bill", "user_email"=>"bill@bill.uga.edu"}}
+  [4;36;1mGroup Load (0.7ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE ("users"."myid" = 'bill') [0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Completed in 80ms (View: 67, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:18:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-07-14 10:19:14) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "user"=>{"user_group"=>"STS", "role"=>"user", "user_lname"=>"bill", "user_fname"=>"bill", "myid"=>"bill", "user_email"=>"bill@bill.uga.edu"}}
+  [4;36;1mGroup Load (0.7ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE ("users"."myid" = 'bill') [0m
+  [4;36;1mUser Create (10.5ms)[0m   [0;1mINSERT INTO "users" ("user_group", "salt", "logged_in", "role", "hashed_password", "user_lname", "user_fname", "password", "user_email", "myid") VALUES ('STS', NULL, 0, 'user', NULL, 'bill', 'bill', NULL, 'bill@bill.uga.edu', 'bill')[0m
+Redirected to http://localhost:3000/users/bill
+Completed in 29ms (DB: 11) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-14 10:19:14) [GET]
+  Parameters: {"id"=>"bill"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='bill')) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Completed in 67ms (View: 7, DB: 1) | 200 OK [http://localhost/users/bill]
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 10:19:14) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, filter, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:19:24) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Completed in 61ms (View: 50, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:19:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-14 10:19:27) [GET]
+  Parameters: {"id"=>"bill"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='bill')) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/users/bill]
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 10:19:27) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, filter, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:19:31) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Completed in 111ms (View: 51, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:19:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-07-14 10:19:33) [GET]
+  Parameters: {"id"=>"bill"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='bill')) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/users/bill/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:19:33) [GET]
+
+ActionController::RoutingError (No route matches "/users/bill/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-07-14 10:19:41) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "id"=>"bill", "user"=>{"user_group"=>"STS", "password_confirmation"=>"", "role"=>"admin", "user_lname"=>"bill", "user_fname"=>"bill", "myid"=>"bill", "password"=>"", "user_email"=>"bill@bill.uga.edu"}}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='bill')) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE ("users"."myid" = 'bill' AND "users".myid <> 'bill') [0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "role" = 'admin', "salt" = NULL, "user_email" = 'bill@bill.uga.edu', "hashed_password" = NULL, "user_fname" = 'bill', "user_lname" = 'bill', "logged_in" = 0, "password" = NULL, "user_group" = 'STS' WHERE ("myid" = 'bill')[0m
+Redirected to http://localhost:3000/users/bill
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/users/bill]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-14 10:19:41) [GET]
+  Parameters: {"id"=>"bill"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='bill')) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('ahalpern')) LIMIT 1[0m
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/users/bill]
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 10:19:42) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, filter, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2010-07-14 10:19:45) [GET]
+Redirected to http://localhost:3000/login
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admin/logout]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:19:45) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 18ms (View: 17, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:19:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:19:49) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"bill", "password"=>""}
+  [4;36;1mGroup Load (0.5ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'bill') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 10:19:49) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('bill')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('bill')) LIMIT 1[0m
+Completed in 16ms (View: 5, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:19:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-07-14 10:19:56) [GET]
+  Parameters: {"id"=>"bill"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='bill')) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('bill')) LIMIT 1[0m
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit/bill]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:19:57) [GET]
+
+ActionController::RoutingError (No route matches "/users/edit/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:20:06) [GET]
+  [4;35;1mTrip Load (68.2ms)[0m   [0mSELECT * FROM "trips" [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;36;1mVehicle Load (0.6ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (4.6ms)
+Rendered trips/_init_red (0.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('bill')) LIMIT 1[0m
+Completed in 186ms (View: 73, DB: 71) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:20:06) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 10:20:08) [GET]
+  [4;36;1mGroup Load (1.4ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('bill')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('bill')) LIMIT 1[0m
+Completed in 19ms (View: 6, DB: 2) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:20:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mUser Delete all (1.7ms)[0m   [0;1mDELETE FROM "users" WHERE (("users"."myid"='bill')) [0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" [0m
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:21:32) [GET]
+  [4;35;1mTrip Load (57.0ms)[0m   [0mSELECT * FROM "trips" [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;36;1mVehicle Load (0.6ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (4.6ms)
+Rendered trips/_init_red (0.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('bill')) LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `user_fname' for nil:NilClass) on line #20 of app/views/layouts/application.html.erb:
+17: <body>
+18: 	<h5>TRUCK APP V. 17.1 Release Candidate X </h5>
+19: 	<%if session[:user_id]%>
+20: 	Logged in as <%=User.find_by_myid(session[:user_id]).user_fname%> | <%=link_to 'Admin', :controller=>'admin', :action=>'index'%> |<%=link_to 'Logout', :controller=>'admin', :action=>'logout'%>
+21: 	<%end%>
+22: 	<div id="container">
+23: 	<% unless flash[:message].nil? %>
+
+    app/views/layouts/application.html.erb:20
+    app/controllers/trips_controller.rb:22:in `index'
+
+Rendered rescues/_trace (45.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:21:50) [GET]
+
+ActionController::RoutingError (No route matches "/logout" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2010-07-14 10:21:55) [GET]
+Redirected to http://localhost:3000/login
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admin/logout]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:21:55) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:21:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:21:58) [GET]
+  [4;36;1mTrip Load (55.7ms)[0m   [0;1mSELECT * FROM "trips" [0m
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;35;1mVehicle Load (0.6ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;36;1mVehicle Load (0.1ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;35;1mReservation Load (0.2ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;36;1mGroup Load (0.5ms)[0m   [0;1mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (4.7ms)
+Rendered trips/_init_red (0.1ms)
+Completed in 168ms (View: 15, DB: 58) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:21:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#new (for 127.0.0.1 at 2010-07-14 10:22:05) [GET]
+  Parameters: {"id"=>"94132"}
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;36;1mReservation Load (0.3ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."vehicle_id" IN ('94132')) [0m
+Rendering template within layouts/application
+Rendering trips/new
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;36;1mLocation Load (9.1ms)[0m   [0;1mSELECT * FROM "locations" [0m
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 143ms (View: 60, DB: 11) | 200 OK [http://localhost/trips/new?id=94132]
+
+
+Processing TripsController#images to gif (for 127.0.0.1 at 2010-07-14 10:22:06) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, explain_service, fulfill_reservation_and_create, index, new, return, show, show_all, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#new (for 127.0.0.1 at 2010-07-14 10:22:11) [GET]
+  Parameters: {"id"=>"94132"}
+Rendering template within layouts/application
+Rendering reservations/new
+  [4;35;1mVehicle Load (0.4ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;36;1mGroup Load (0.4ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 107ms (View: 47, DB: 2) | 200 OK [http://localhost/reservations/new?id=94132]
+
+
+Processing ReservationsController#images to gif (for 127.0.0.1 at 2010-07-14 10:22:12) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#new (for 127.0.0.1 at 2010-07-14 10:23:05) [GET]
+  Parameters: {"id"=>"94132"}
+Rendering template within layouts/application
+Rendering reservations/new
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 96ms (View: 38, DB: 2) | 200 OK [http://localhost/reservations/new?id=94132]
+
+
+Processing ReservationsController#images to gif (for 127.0.0.1 at 2010-07-14 10:23:06) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#new (for 127.0.0.1 at 2010-07-14 10:23:08) [GET]
+  Parameters: {"id"=>"94132"}
+Rendering template within layouts/application
+Rendering reservations/new
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 95ms (View: 88, DB: 2) | 200 OK [http://localhost/reservations/new?id=94132]
+
+
+Processing ReservationsController#images to gif (for 127.0.0.1 at 2010-07-14 10:23:08) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2010-07-14 10:23:15) [GET]
+  Parameters: {"id"=>"94132"}
+
+SyntaxError (/Users/studenttechsupport/Documents/vehicle-mgmt/vehicle-mgmt/app/controllers/vehicles_controller.rb:2: syntax error, unexpected ',', expecting tASSOC
+..., :except => 'show', 'update', 'check_out', 'check_in', 'rel...
+                              ^
+/Users/studenttechsupport/Documents/vehicle-mgmt/vehicle-mgmt/app/controllers/vehicles_controller.rb:2: syntax error, unexpected ',', expecting kEND
+...'show', 'update', 'check_out', 'check_in', 'release_hold'
+                              ^
+/Users/studenttechsupport/Documents/vehicle-mgmt/vehicle-mgmt/app/controllers/vehicles_controller.rb:2: syntax error, unexpected ',', expecting kEND
+...ate', 'check_out', 'check_in', 'release_hold'
+                              ^):
+  
+
+Rendered rescues/_trace (84.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2010-07-14 10:24:35) [GET]
+  Parameters: {"id"=>"94132"}
+
+SyntaxError (/Users/studenttechsupport/Documents/vehicle-mgmt/vehicle-mgmt/app/controllers/vehicles_controller.rb:2: syntax error, unexpected ',', expecting tASSOC
+...ate, :except => :show,:update,:check_out,:check_in,:release_...
+                              ^):
+  
+
+Rendered rescues/_trace (30.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VehiclesController#show (for 127.0.0.1 at 2010-07-14 10:26:34) [GET]
+  Parameters: {"id"=>"94132"}
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;35;1mReservation Load (0.1ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) AND (("reservations"."vehicle_id" = '94132')) [0m
+Rendering template within layouts/application
+Rendering vehicles/show
+Rendered vehicles/_needs_attention (15.8ms)
+Completed in 158ms (View: 97, DB: 0) | 200 OK [http://localhost/vehicles/show/94132]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:26:35) [GET]
+
+ActionController::RoutingError (No route matches "/vehicles/show/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VehiclesController#update (for 127.0.0.1 at 2010-07-14 10:26:49) [PUT]
+  Parameters: {"commit"=>"Update Details (This will not check in the vehicle)", "vehicle"=>{"service_comments"=>"it just does", "needs_gas"=>"1", "needs_service"=>"1"}, "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "id"=>"94132"}
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."parking_id" = '11047035' AND "vehicles".vehicleID <> '94132') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."hows_my_driving" = '001' AND "vehicles".vehicleID <> '94132') [0m
+  [4;35;1mVehicle Update (12.6ms)[0m   [0mUPDATE "vehicles" SET "hows_my_driving" = '001', "alias" = 'Danger Ranger', "needs_gas" = 1, "service_comments" = 'it just does', "reserved" = 0, "checked_out" = 0, "image_url" = '/images/94132.jpg', "needs_service" = 1, "service_timestamp" = NULL, "year_made" = 2001, "model" = 'Ranger', "parking_id" = '11047035', "make" = 'Ford', "owner" = 'STS' WHERE ("vehicleID" = '94132')[0m
+Redirected to http://localhost:3000/vehicles/94132
+Completed in 25ms (DB: 13) | 302 Found [http://localhost/vehicles/94132]
+
+
+Processing VehiclesController#show (for 127.0.0.1 at 2010-07-14 10:26:49) [GET]
+  Parameters: {"id"=>"94132"}
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;35;1mReservation Load (0.2ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) AND (("reservations"."vehicle_id" = '94132')) [0m
+Rendering template within layouts/application
+Rendering vehicles/show
+Rendered vehicles/_needs_attention (3.3ms)
+Completed in 19ms (View: 9, DB: 0) | 200 OK [http://localhost/vehicles/94132]
+
+
+Processing VehiclesController#images to gif (for 127.0.0.1 at 2010-07-14 10:26:50) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+NoMethodError (undefined method `authenticate' for #<VehiclesController:0x1043ebca0>):
+  
+
+Rendered rescues/_trace (33.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VehiclesController#update (for 127.0.0.1 at 2010-07-14 10:26:53) [PUT]
+  Parameters: {"commit"=>"Update Details (This will not check in the vehicle)", "vehicle"=>{"service_comments"=>"it just does", "needs_gas"=>"0", "needs_service"=>"0"}, "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "id"=>"94132"}
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."parking_id" = '11047035' AND "vehicles".vehicleID <> '94132') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."hows_my_driving" = '001' AND "vehicles".vehicleID <> '94132') [0m
+  [4;35;1mVehicle Update (0.2ms)[0m   [0mUPDATE "vehicles" SET "hows_my_driving" = '001', "alias" = 'Danger Ranger', "needs_gas" = 0, "service_comments" = 'it just does', "reserved" = 0, "checked_out" = 0, "image_url" = '/images/94132.jpg', "needs_service" = 0, "service_timestamp" = NULL, "year_made" = 2001, "model" = 'Ranger', "parking_id" = '11047035', "make" = 'Ford', "owner" = 'STS' WHERE ("vehicleID" = '94132')[0m
+Redirected to http://localhost:3000/vehicles/94132
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/vehicles/94132]
+
+
+Processing VehiclesController#show (for 127.0.0.1 at 2010-07-14 10:26:53) [GET]
+  Parameters: {"id"=>"94132"}
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;35;1mReservation Load (0.1ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) AND (("reservations"."vehicle_id" = '94132')) [0m
+Rendering template within layouts/application
+Rendering vehicles/show
+Rendered vehicles/_needs_attention (3.4ms)
+Completed in 20ms (View: 9, DB: 0) | 200 OK [http://localhost/vehicles/94132]
+
+
+Processing VehiclesController#images to gif (for 127.0.0.1 at 2010-07-14 10:26:54) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+NoMethodError (undefined method `authenticate' for #<VehiclesController:0x1042ab020>):
+  
+
+Rendered rescues/_trace (32.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:26:56) [GET]
+  [4;36;1mTrip Load (57.2ms)[0m   [0;1mSELECT * FROM "trips" [0m
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;35;1mVehicle Load (0.6ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;36;1mVehicle Load (0.1ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;35;1mReservation Load (0.2ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (5.2ms)
+Rendered trips/_init_red (0.1ms)
+Completed in 117ms (View: 15, DB: 59) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:26:56) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#new (for 127.0.0.1 at 2010-07-14 10:26:58) [GET]
+  Parameters: {"id"=>"94132"}
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;36;1mReservation Load (0.3ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."vehicle_id" IN ('94132')) [0m
+Rendering template within layouts/application
+Rendering trips/new
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;36;1mLocation Load (9.0ms)[0m   [0;1mSELECT * FROM "locations" [0m
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 103ms (View: 78, DB: 11) | 200 OK [http://localhost/trips/new?id=94132]
+
+
+Processing TripsController#images to gif (for 127.0.0.1 at 2010-07-14 10:26:59) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, explain_service, fulfill_reservation_and_create, index, new, return, show, show_all, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#create (for 127.0.0.1 at 2010-07-14 10:27:02) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "trip"=>{"check_out_time(2i)"=>"7", "comments"=>"", "check_out_time(3i)"=>"14", "check_out_time(4i)"=>"10", "check_out_time(5i)"=>"26", "myid"=>"rdekker", "vehicle_id"=>"94132", "destination_name"=>"", "check_out_time(1i)"=>"2010"}}
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+Rendering template within layouts/application
+Rendering trips/new
+  [4;36;1mVehicle Load (0.6ms)[0m   [0;1mSELECT * FROM "vehicles" [0m
+  [4;35;1mLocation Load (8.8ms)[0m   [0mSELECT * FROM "locations" [0m
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 108ms (View: 84, DB: 11) | 200 OK [http://localhost/trips]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:27:02) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#images to gif (for 127.0.0.1 at 2010-07-14 10:27:05) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, explain_service, fulfill_reservation_and_create, index, new, return, show, show_all, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#create (for 127.0.0.1 at 2010-07-14 10:27:07) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "trip"=>{"check_out_time(2i)"=>"7", "comments"=>"", "check_out_time(3i)"=>"14", "check_out_time(4i)"=>"10", "check_out_time(5i)"=>"26", "myid"=>"rdekker", "vehicle_id"=>"94132", "destination_name"=>"Aderhold", "check_out_time(1i)"=>"2010"}}
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;35;1mTrip Create (0.3ms)[0m   [0mINSERT INTO "trips" ("comments", "check_out_time", "check_in_time", "vehicle_id", "myid", "reservation_id", "destination_name") VALUES('', '2010-07-14 14:26:00', NULL, '94132', 'rdekker', NULL, 'Aderhold')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."parking_id" = '11047035' AND "vehicles".vehicleID <> '94132') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."hows_my_driving" = '001' AND "vehicles".vehicleID <> '94132') [0m
+  [4;36;1mVehicle Update (0.2ms)[0m   [0;1mUPDATE "vehicles" SET "hows_my_driving" = '001', "alias" = 'Danger Ranger', "needs_gas" = 0, "service_comments" = 'it just does', "reserved" = 0, "checked_out" = 1, "image_url" = '/images/94132.jpg', "needs_service" = 0, "service_timestamp" = NULL, "year_made" = 2001, "model" = 'Ranger', "parking_id" = '11047035', "make" = 'Ford', "owner" = 'STS' WHERE ("vehicleID" = '94132')[0m
+Redirected to http://localhost:3000/trips/1221
+Completed in 20ms (DB: 1) | 302 Found [http://localhost/trips]
+
+
+Processing TripsController#show (for 127.0.0.1 at 2010-07-14 10:27:07) [GET]
+  Parameters: {"id"=>"1221"}
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."trip_id" = 1221) [0m
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94132') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering trips/show
+Rendered vehicles/_needs_attention (5.2ms)
+Completed in 94ms (View: 28, DB: 0) | 200 OK [http://localhost/trips/1221]
+
+
+Processing TripsController#images to gif (for 127.0.0.1 at 2010-07-14 10:27:07) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, explain_service, fulfill_reservation_and_create, index, new, return, show, show_all, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:27:13) [GET]
+  [4;35;1mTrip Load (109.9ms)[0m   [0mSELECT * FROM "trips" [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;36;1mVehicle Load (0.5ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;36;1mVehicle Load (0.1ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (5.4ms)
+Rendered trips/_init_red (0.7ms)
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94132') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."name" = 'Aderhold') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'rdekker') LIMIT 1[0m
+Completed in 190ms (View: 33, DB: 113) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:27:14) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VehiclesController#show (for 127.0.0.1 at 2010-07-14 10:27:17) [GET]
+  Parameters: {"id"=>"94132"}
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;35;1mReservation Load (0.1ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) AND (("reservations"."vehicle_id" = '94132')) [0m
+Rendering template within layouts/application
+Rendering vehicles/show
+  [4;36;1mTrip Load (0.7ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+Rendered vehicles/_needs_attention (3.1ms)
+Completed in 30ms (View: 18, DB: 1) | 200 OK [http://localhost/vehicles/94132]
+
+
+Processing VehiclesController#images to gif (for 127.0.0.1 at 2010-07-14 10:27:17) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+NoMethodError (undefined method `authenticate' for #<VehiclesController:0x104246d50>):
+  
+
+Rendered rescues/_trace (88.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VehiclesController#show (for 127.0.0.1 at 2010-07-14 10:28:10) [GET]
+  Parameters: {"id"=>"94132"}
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;36;1mReservation Load (0.1ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) AND (("reservations"."vehicle_id" = '94132')) [0m
+Rendering template within layouts/application
+Rendering vehicles/show
+  [4;35;1mTrip Load (0.7ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+Rendered vehicles/_needs_attention (2.9ms)
+Completed in 28ms (View: 17, DB: 1) | 200 OK [http://localhost/vehicles/94132]
+
+
+Processing VehiclesController#images to gif (for 127.0.0.1 at 2010-07-14 10:28:10) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+NoMethodError (undefined method `authenticate' for #<VehiclesController:0x10417a610>):
+  
+
+Rendered rescues/_trace (88.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:28:13) [GET]
+  [4;36;1mTrip Load (56.2ms)[0m   [0;1mSELECT * FROM "trips" [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;35;1mVehicle Load (0.5ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;36;1mVehicle Load (0.1ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;35;1mReservation Load (0.3ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (5.4ms)
+Rendered trips/_init_red (0.7ms)
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94132') LIMIT 1[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."name" = 'Aderhold') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'rdekker') LIMIT 1[0m
+Completed in 190ms (View: 33, DB: 59) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:28:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:28:17) [GET]
+
+NoMethodError (undefined method `authenticate' for #<UsersController:0x104117a88>):
+  
+
+Rendered rescues/_trace (91.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VehiclesController#edit (for 127.0.0.1 at 2010-07-14 10:28:53) [GET]
+  Parameters: {"id"=>"94132"}
+
+NoMethodError (undefined method `authenticate' for #<VehiclesController:0x10421efa8>):
+  
+
+Rendered rescues/_trace (33.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VehiclesController#edit (for 127.0.0.1 at 2010-07-14 10:29:01) [GET]
+  Parameters: {"id"=>"94132"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 68ms (DB: 1) | 302 Found [http://localhost/vehicles/edit/94132]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:29:01) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:29:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:29:13) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:29:13) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:29:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-14 10:29:16) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='show')) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find all Users with IDs ([["show"]])"users"."myid"='show'):
+  /Users/studenttechsupport/.gem/ruby/1.8/gems/composite_primary_keys-2.3.5.1/lib/composite_primary_keys/base.rb:298:in `find_from_ids'
+  app/controllers/users_controller.rb:20:in `show'
+
+Rendered rescues/_trace (32.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-14 10:29:24) [GET]
+  Parameters: {"id"=>"danman01"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='danman01')) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/users/show/danman01]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:29:24) [GET]
+
+ActionController::RoutingError (No route matches "/users/show/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:29:27) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:29:27) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:29:27) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:29:28) [GET]
+
+ActionController::RoutingError (No route matches "/users/show/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:29:33) [GET]
+  [4;35;1mTrip Load (56.7ms)[0m   [0mSELECT * FROM "trips" [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;36;1mVehicle Load (0.4ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;36;1mVehicle Load (0.1ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;35;1mVehicle Load (51.9ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (4.3ms)
+Rendered trips/_init_red (0.7ms)
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94132') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."name" = 'Aderhold') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'rdekker') LIMIT 1[0m
+Completed in 185ms (View: 32, DB: 111) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:29:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:30:47) [GET]
+  [4;36;1mTrip Load (118.8ms)[0m   [0;1mSELECT * FROM "trips" [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;35;1mVehicle Load (0.5ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;36;1mVehicle Load (0.1ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;35;1mReservation Load (0.3ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (4.2ms)
+Rendered trips/_init_red (0.6ms)
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94132') LIMIT 1[0m
+  [4;36;1mLocation Load (0.6ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."name" = 'Aderhold') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'rdekker') LIMIT 1[0m
+Completed in 197ms (View: 31, DB: 122) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:30:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#new (for 127.0.0.1 at 2010-07-14 10:30:49) [GET]
+  Parameters: {"id"=>"94237"}
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+  [4;36;1mReservation Load (0.3ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."vehicle_id" IN ('94237')) [0m
+Rendering template within layouts/application
+Rendering trips/new
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+  [4;36;1mLocation Load (8.9ms)[0m   [0;1mSELECT * FROM "locations" [0m
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 130ms (View: 105, DB: 11) | 200 OK [http://localhost/trips/new?id=94237]
+
+
+Processing TripsController#images to gif (for 127.0.0.1 at 2010-07-14 10:30:50) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, explain_service, fulfill_reservation_and_create, index, new, return, show, show_all, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#create (for 127.0.0.1 at 2010-07-14 10:30:53) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "trip"=>{"check_out_time(2i)"=>"7", "comments"=>"", "check_out_time(3i)"=>"14", "check_out_time(4i)"=>"10", "check_out_time(5i)"=>"30", "myid"=>"sang1989", "vehicle_id"=>"94237", "destination_name"=>"529 Baxter St", "check_out_time(1i)"=>"2010"}}
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+  [4;36;1mTrip Create (12.6ms)[0m   [0;1mINSERT INTO "trips" ("comments", "check_out_time", "check_in_time", "vehicle_id", "myid", "reservation_id", "destination_name") VALUES('', '2010-07-14 14:30:00', NULL, '94237', 'sang1989', NULL, '529 Baxter St')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."parking_id" = '11047036' AND "vehicles".vehicleID <> '94237') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."hows_my_driving" = '906LR' AND "vehicles".vehicleID <> '94237') [0m
+  [4;35;1mVehicle Update (0.2ms)[0m   [0mUPDATE "vehicles" SET "hows_my_driving" = '906LR', "alias" = 'Power Van', "needs_gas" = 0, "service_comments" = '', "reserved" = 0, "checked_out" = 1, "image_url" = '/images/94237.jpg', "needs_service" = 1, "service_timestamp" = NULL, "year_made" = 2002, "model" = 'Windstar', "parking_id" = '11047036', "make" = 'Ford', "owner" = 'STS' WHERE ("vehicleID" = '94237')[0m
+Redirected to http://localhost:3000/trips/1222
+Completed in 32ms (DB: 13) | 302 Found [http://localhost/trips]
+
+
+Processing TripsController#show (for 127.0.0.1 at 2010-07-14 10:30:53) [GET]
+  Parameters: {"id"=>"1222"}
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."trip_id" = 1222) [0m
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94237') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering trips/show
+Rendered vehicles/_needs_attention (5.0ms)
+Completed in 82ms (View: 72, DB: 0) | 200 OK [http://localhost/trips/1222]
+
+
+Processing TripsController#images to gif (for 127.0.0.1 at 2010-07-14 10:30:53) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, explain_service, fulfill_reservation_and_create, index, new, return, show, show_all, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VehiclesController#update (for 127.0.0.1 at 2010-07-14 10:30:57) [PUT]
+  Parameters: {"commit"=>"Update Details (This will not check in the vehicle)", "vehicle"=>{"service_comments"=>"On 7/14/2010: ", "needs_gas"=>"1", "needs_service"=>"1"}, "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "id"=>"94237"}
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."parking_id" = '11047036' AND "vehicles".vehicleID <> '94237') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."hows_my_driving" = '906LR' AND "vehicles".vehicleID <> '94237') [0m
+  [4;35;1mVehicle Update (0.2ms)[0m   [0mUPDATE "vehicles" SET "hows_my_driving" = '906LR', "alias" = 'Power Van', "needs_gas" = 1, "service_comments" = 'On 7/14/2010: ', "reserved" = 0, "checked_out" = 1, "image_url" = '/images/94237.jpg', "needs_service" = 1, "service_timestamp" = NULL, "year_made" = 2002, "model" = 'Windstar', "parking_id" = '11047036', "make" = 'Ford', "owner" = 'STS' WHERE ("vehicleID" = '94237')[0m
+Redirected to http://localhost:3000/vehicles/94237
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/vehicles/94237]
+
+
+Processing VehiclesController#show (for 127.0.0.1 at 2010-07-14 10:30:57) [GET]
+  Parameters: {"id"=>"94237"}
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+  [4;35;1mReservation Load (0.2ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) AND (("reservations"."vehicle_id" = '94237')) [0m
+Rendering template within layouts/application
+Rendering vehicles/show
+  [4;36;1mTrip Load (0.8ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+Rendered vehicles/_needs_attention (2.9ms)
+Completed in 28ms (View: 17, DB: 1) | 200 OK [http://localhost/vehicles/94237]
+
+
+Processing VehiclesController#images to gif (for 127.0.0.1 at 2010-07-14 10:30:57) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/vehicles/images/loadingAnimation.gif]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:30:57) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 17ms (View: 16, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:31:02) [GET]
+  [4;35;1mTrip Load (109.3ms)[0m   [0mSELECT * FROM "trips" [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;35;1mVehicle Load (0.9ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;36;1mVehicle Load (0.4ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (3.8ms)
+Rendered trips/_init_red (1.4ms)
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94132') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."name" = 'Aderhold') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'rdekker') LIMIT 1[0m
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94237') LIMIT 1[0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."name" = '529 Baxter St') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'sang1989') LIMIT 1[0m
+Completed in 192ms (View: 35, DB: 113) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:31:02) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VehiclesController#show (for 127.0.0.1 at 2010-07-14 10:31:06) [GET]
+  Parameters: {"id"=>"94237"}
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+  [4;36;1mReservation Load (0.1ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) AND (("reservations"."vehicle_id" = '94237')) [0m
+Rendering template within layouts/application
+Rendering vehicles/show
+  [4;35;1mTrip Load (0.8ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+Rendered vehicles/_needs_attention (3.0ms)
+Completed in 29ms (View: 17, DB: 1) | 200 OK [http://localhost/vehicles/94237]
+
+
+Processing VehiclesController#images to gif (for 127.0.0.1 at 2010-07-14 10:31:06) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+  [4;36;1mGroup Load (0.5ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/vehicles/images/loadingAnimation.gif]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:31:06) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ReservationsController#new (for 127.0.0.1 at 2010-07-14 10:31:09) [GET]
+  Parameters: {"id"=>"94237"}
+Rendering template within layouts/application
+Rendering reservations/new
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 44ms (View: 37, DB: 2) | 200 OK [http://localhost/reservations/new?id=94237]
+
+
+Processing ReservationsController#images to gif (for 127.0.0.1 at 2010-07-14 10:31:09) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#create (for 127.0.0.1 at 2010-07-14 10:31:13) [POST]
+  Parameters: {"commit"=>"Create", "reservation"=>{"reserved_until(5i)"=>"31", "reserved_from(2i)"=>"7", "reserved_from(3i)"=>"14", "comments"=>"", "reserved_from(4i)"=>"10", "reserved_from(5i)"=>"31", "user_id"=>"sang1989", "reserved_until(1i)"=>"2010", "vehicle_id"=>"94237", "reserved_until(2i)"=>"7", "reserved_until(3i)"=>"14", "reserved_until(4i)"=>"10", "reserved_from(1i)"=>"2010"}, "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI="}
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"=94237)) [0m
+Rendering template within layouts/application
+Rendering reservations/new
+  [4;36;1mVehicle Load (0.6ms)[0m   [0;1mSELECT * FROM "vehicles" [0m
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 98ms (View: 32, DB: 3) | 200 OK [http://localhost/reservations]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:31:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#create (for 127.0.0.1 at 2010-07-14 10:31:19) [POST]
+  Parameters: {"commit"=>"Create", "reservation"=>{"reserved_until(5i)"=>"43", "reserved_from(2i)"=>"7", "reserved_from(3i)"=>"14", "comments"=>"", "reserved_from(4i)"=>"10", "reserved_from(5i)"=>"31", "user_id"=>"sang1989", "reserved_until(1i)"=>"2010", "vehicle_id"=>"94132", "reserved_until(2i)"=>"7", "reserved_until(3i)"=>"14", "reserved_until(4i)"=>"10", "reserved_from(1i)"=>"2010"}, "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI="}
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"=94132)) [0m
+  [4;36;1mReservation Create (0.3ms)[0m   [0;1mINSERT INTO "reservations" ("fulfilled", "reserved_until", "trip_id", "created_at", "comments", "reserved_from", "updated_at", "user_id", "vehicle_id") VALUES(0, '2010-07-14 14:43:00', NULL, '2010-07-14 14:31:19', '', '2010-07-14 14:31:00', '2010-07-14 14:31:19', 'sang1989', 94132)[0m
+Redirected to http://localhost:3000/reservations/11
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/reservations]
+
+
+Processing ReservationsController#show (for 127.0.0.1 at 2010-07-14 10:31:19) [GET]
+  Parameters: {"id"=>"11"}
+  [4;35;1mReservation Load (0.2ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."id" = 11) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/show
+Completed in 34ms (View: 26, DB: 0) | 200 OK [http://localhost/reservations/11]
+
+
+Processing ReservationsController#images to gif (for 127.0.0.1 at 2010-07-14 10:31:19) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:31:21) [GET]
+  [4;35;1mTrip Load (107.4ms)[0m   [0mSELECT * FROM "trips" [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;35;1mVehicle Load (0.4ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;36;1mVehicle Load (0.4ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;36;1mReservation Load (0.3ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (3.7ms)
+Rendered trips/_init_red (1.3ms)
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94132') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."name" = 'Aderhold') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'rdekker') LIMIT 1[0m
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94237') LIMIT 1[0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."name" = '529 Baxter St') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'sang1989') LIMIT 1[0m
+Completed in 191ms (View: 37, DB: 111) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:31:21) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#edit (for 127.0.0.1 at 2010-07-14 10:31:30) [GET]
+  Parameters: {"id"=>"1221"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/trips/1221/edit]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:31:30) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:31:30) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:31:32) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#destroy (for 127.0.0.1 at 2010-07-14 10:31:36) [DELETE]
+  Parameters: {"authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "id"=>"1221"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/trips/1221]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:31:36) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:31:36) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:31:38) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:31:39) [GET]
+  [4;35;1mTrip Load (107.3ms)[0m   [0mSELECT * FROM "trips" [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;35;1mVehicle Load (0.4ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;36;1mVehicle Load (0.4ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;36;1mReservation Load (0.3ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (3.6ms)
+Rendered trips/_init_red (1.3ms)
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94132') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."name" = 'Aderhold') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'rdekker') LIMIT 1[0m
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94237') LIMIT 1[0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."name" = '529 Baxter St') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'sang1989') LIMIT 1[0m
+Completed in 191ms (View: 37, DB: 111) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:31:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#show (for 127.0.0.1 at 2010-07-14 10:31:43) [GET]
+  Parameters: {"id"=>"1221"}
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."trip_id" = 1221) [0m
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94132') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering trips/show
+Rendered vehicles/_needs_attention (5.0ms)
+Completed in 24ms (View: 12, DB: 0) | 200 OK [http://localhost/trips/1221]
+
+
+Processing TripsController#images to gif (for 127.0.0.1 at 2010-07-14 10:31:43) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, explain_service, fulfill_reservation_and_create, index, new, return, show, show_all, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:31:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#return (for 127.0.0.1 at 2010-07-14 10:31:53) [GET]
+  Parameters: {"id"=>"1221"}
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."trip_id" = 1221) [0m
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94132')) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."parking_id" = '11047035' AND "vehicles".vehicleID <> '94132') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."hows_my_driving" = '001' AND "vehicles".vehicleID <> '94132') [0m
+  [4;35;1mVehicle Update (16.4ms)[0m   [0mUPDATE "vehicles" SET "hows_my_driving" = '001', "alias" = 'Danger Ranger', "needs_gas" = 0, "service_comments" = 'it just does', "reserved" = 0, "checked_out" = 0, "image_url" = '/images/94132.jpg', "needs_service" = 0, "service_timestamp" = NULL, "year_made" = 2001, "model" = 'Ranger', "parking_id" = '11047035', "make" = 'Ford', "owner" = 'STS' WHERE ("vehicleID" = '94132')[0m
+  [4;36;1mTrip Update (0.2ms)[0m   [0;1mUPDATE "trips" SET "check_in_time" = '2010-07-14 14:31:53' WHERE "trip_id" = 1221[0m
+Redirected to http://localhost:3000/trips/1221
+Completed in 36ms (DB: 17) | 302 Found [http://localhost/trips/return/1221]
+
+
+Processing TripsController#show (for 127.0.0.1 at 2010-07-14 10:31:53) [GET]
+  Parameters: {"id"=>"1221"}
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."trip_id" = 1221) [0m
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94132') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering trips/show
+Rendered vehicles/_needs_attention (4.9ms)
+Completed in 22ms (View: 11, DB: 0) | 200 OK [http://localhost/trips/1221]
+
+
+Processing TripsController#images to gif (for 127.0.0.1 at 2010-07-14 10:31:53) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, explain_service, fulfill_reservation_and_create, index, new, return, show, show_all, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:31:56) [GET]
+  [4;35;1mTrip Load (55.9ms)[0m   [0mSELECT * FROM "trips" [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;36;1mVehicle Load (0.5ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;36;1mReservation Load (0.3ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (4.1ms)
+Rendered trips/_init_red (1.0ms)
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94237') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."name" = '529 Baxter St') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'sang1989') LIMIT 1[0m
+Completed in 190ms (View: 88, DB: 59) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:31:56) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VehiclesController#show (for 127.0.0.1 at 2010-07-14 10:33:23) [GET]
+  Parameters: {"id"=>"94237"}
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+  [4;35;1mReservation Load (0.1ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) AND (("reservations"."vehicle_id" = '94237')) [0m
+Rendering template within layouts/application
+Rendering vehicles/show
+  [4;36;1mTrip Load (0.7ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+Rendered vehicles/_needs_attention (3.0ms)
+Completed in 27ms (View: 17, DB: 1) | 200 OK [http://localhost/vehicles/94237]
+
+
+Processing VehiclesController#images to gif (for 127.0.0.1 at 2010-07-14 10:33:23) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/vehicles/images/loadingAnimation.gif]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:33:23) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing TripsController#update (for 127.0.0.1 at 2010-07-14 10:33:31) [PUT]
+  Parameters: {"commit"=>"Update Comment", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "id"=>"1222", "trip"=>{"comments"=>"sdfg"}}
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."trip_id" = 1222) [0m
+  [4;36;1mTrip Update (15.4ms)[0m   [0;1mUPDATE "trips" SET "comments" = 'sdfg' WHERE "trip_id" = 1222[0m
+Redirected to http://localhost:3000/trips/1222
+Completed in 25ms (DB: 16) | 302 Found [http://localhost/trips/1222]
+
+
+Processing TripsController#show (for 127.0.0.1 at 2010-07-14 10:33:31) [GET]
+  Parameters: {"id"=>"1222"}
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."trip_id" = 1222) [0m
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94237') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering trips/show
+Rendered vehicles/_needs_attention (4.9ms)
+Completed in 26ms (View: 15, DB: 0) | 200 OK [http://localhost/trips/1222]
+
+
+Processing TripsController#images to gif (for 127.0.0.1 at 2010-07-14 10:33:32) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, explain_service, fulfill_reservation_and_create, index, new, return, show, show_all, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:33:38) [GET]
+  [4;35;1mTrip Load (56.3ms)[0m   [0mSELECT * FROM "trips" [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;36;1mVehicle Load (0.5ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;36;1mReservation Load (0.3ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (4.0ms)
+Rendered trips/_init_red (1.3ms)
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94237') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."name" = '529 Baxter St') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'sang1989') LIMIT 1[0m
+Completed in 187ms (View: 34, DB: 59) | 200 OK [http://localhost/trips]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:33:38) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#destroy (for 127.0.0.1 at 2010-07-14 10:33:43) [DELETE]
+  Parameters: {"authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "id"=>"1222"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/trips/1222]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:33:43) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:33:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:33:48) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danman01", "password"=>"horse"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+Redirected to http://localhost:3000/login?%2Ftrips%2F1222=index
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:33:48) [GET]
+  Parameters: {"/trips/1222"=>"index"}
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/login?%2Ftrips%2F1222=index]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:33:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:34:37) [GET]
+  Parameters: {"/trips/1222"=>"index"}
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/login?%2Ftrips%2F1222=index]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:34:37) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:34:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:34:40) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:34:41) [GET]
+  [4;36;1mTrip Load (57.7ms)[0m   [0;1mSELECT * FROM "trips" [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;35;1mVehicle Load (0.5ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;36;1mVehicle Load (0.1ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;35;1mReservation Load (0.3ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (4.0ms)
+Rendered trips/_init_red (0.9ms)
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94237') LIMIT 1[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."name" = '529 Baxter St') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'sang1989') LIMIT 1[0m
+Completed in 185ms (View: 33, DB: 61) | 200 OK [http://localhost/trips]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:34:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#destroy (for 127.0.0.1 at 2010-07-14 10:34:44) [DELETE]
+  Parameters: {"authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "id"=>"1222"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/trips/1222]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:34:45) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:34:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 10:34:48) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danman01", "password"=>"horse"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 10:34:48) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 23ms (View: 7, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:34:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:34:52) [GET]
+  [4;36;1mTrip Load (57.6ms)[0m   [0;1mSELECT * FROM "trips" [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;36;1mVehicle Load (0.3ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;35;1mVehicle Load (0.5ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;36;1mVehicle Load (0.1ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;35;1mReservation Load (0.3ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (3.9ms)
+Rendered trips/_init_red (0.9ms)
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."vehicleID" = '94237') LIMIT 1[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."name" = '529 Baxter St') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" = 'sang1989') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 186ms (View: 83, DB: 61) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:34:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#destroy (for 127.0.0.1 at 2010-07-14 10:34:55) [DELETE]
+  Parameters: {"authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "id"=>"1222"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."trip_id" = 1222) [0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" INNER JOIN "locations_trips" ON ("locations"."building_dbid"="locations_trips"."trip_id") WHERE (("locations_trips"."building_dbid" = 1222)) [0m
+  [4;36;1mTrip Destroy (1.1ms)[0m   [0;1mDELETE FROM "trips" WHERE "trip_id" = 1222[0m
+  [4;35;1mVehicle Load (0.3ms)[0m   [0mSELECT * FROM "vehicles" WHERE (("vehicles"."vehicleID"='94237')) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."parking_id" = '11047036' AND "vehicles".vehicleID <> '94237') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "vehicles" WHERE ("vehicles"."hows_my_driving" = '906LR' AND "vehicles".vehicleID <> '94237') [0m
+  [4;36;1mVehicle Update (0.2ms)[0m   [0;1mUPDATE "vehicles" SET "hows_my_driving" = '906LR', "alias" = 'Power Van', "needs_gas" = 1, "service_comments" = 'On 7/14/2010: ', "reserved" = 0, "checked_out" = 0, "image_url" = '/images/94237.jpg', "needs_service" = 1, "service_timestamp" = NULL, "year_made" = 2002, "model" = 'Windstar', "parking_id" = '11047036', "make" = 'Ford', "owner" = 'STS' WHERE ("vehicleID" = '94237')[0m
+Redirected to http://localhost:3000/trips
+Completed in 77ms (DB: 3) | 302 Found [http://localhost/trips/1222]
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-07-14 10:34:56) [GET]
+  [4;35;1mTrip Load (118.8ms)[0m   [0mSELECT * FROM "trips" [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."check_in_time" IS NULL) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 1) [0m
+  [4;36;1mVehicle Load (0.6ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."checked_out" = 0) [0m
+  [4;35;1mVehicle Load (0.1ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."reserved" = 1) [0m
+  [4;36;1mVehicle Load (0.2ms)[0m   [0;1mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_gas" = 1) [0m
+  [4;35;1mVehicle Load (0.2ms)[0m   [0mSELECT * FROM "vehicles" WHERE ("vehicles"."needs_service" = 1) [0m
+  [4;36;1mReservation Load (0.3ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations"."fulfilled" = 0) [0m
+Rendering template within layouts/application
+Rendering trips/index
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendered trips/_init_green (4.5ms)
+Rendered trips/_init_red (0.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 189ms (View: 25, DB: 121) | 200 OK [http://localhost/trips]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:34:56) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 10:35:00) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 16ms (View: 5, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:35:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:35:04) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 130ms (View: 118, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:35:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:36:54) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 63ms (View: 51, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:36:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:38:09) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 63ms (View: 51, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:38:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:38:33) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 63ms (View: 50, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:38:33) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:38:46) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 64ms (View: 51, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:38:46) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:39:14) [GET]
+  [4;35;1mGroup Load (0.7ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 128ms (View: 54, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:39:14) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:39:31) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 121ms (View: 109, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:39:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-07-14 10:39:57) [GET]
+  Parameters: {"id"=>"ahalpern"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (("users"."myid"='ahalpern')) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/users/ahalpern/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:39:58) [GET]
+
+ActionController::RoutingError (No route matches "/users/ahalpern/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-07-14 10:40:04) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "id"=>"ahalpern", "user"=>{"user_group"=>"STS", "password_confirmation"=>"", "role"=>"user", "user_lname"=>"Halpern", "user_fname"=>"Ashley", "myid"=>"ahalpern", "password"=>"", "user_email"=>"ahalpern@uga.edu"}}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='ahalpern')) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE ("users"."myid" = 'ahalpern' AND "users".myid <> 'ahalpern') [0m
+  [4;36;1mUser Update (11.8ms)[0m   [0;1mUPDATE "users" SET "role" = 'user', "salt" = '21816876200.0506377251473158', "user_email" = 'ahalpern@uga.edu', "hashed_password" = '3da0d14fcacf5a2ef930ae9381f0cb17307274b3', "user_fname" = 'Ashley', "user_lname" = 'Halpern', "logged_in" = 0, "password" = NULL, "user_group" = 'STS' WHERE ("myid" = 'ahalpern')[0m
+Redirected to http://localhost:3000/users/ahalpern
+Completed in 28ms (DB: 13) | 302 Found [http://localhost/users/ahalpern]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-14 10:40:04) [GET]
+  Parameters: {"id"=>"ahalpern"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (("users"."myid"='ahalpern')) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 17ms (View: 6, DB: 1) | 200 OK [http://localhost/users/ahalpern]
+
+
+Processing UsersController#images to gif (for 127.0.0.1 at 2010-07-14 10:40:04) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, filter, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 10:40:10) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 28ms (View: 16, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:40:11) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:40:13) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 117ms (View: 104, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:40:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-07-14 10:40:14) [GET]
+  Parameters: {"id"=>"mattb"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (("users"."myid"='mattb')) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/users/mattb/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:40:15) [GET]
+
+ActionController::RoutingError (No route matches "/users/mattb/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 10:40:17) [GET]
+  [4;36;1mGroup Load (0.7ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 60ms (View: 47, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:40:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-14 11:02:11) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 132ms (View: 63, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:02:12) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 11:02:18) [GET]
+  [4;36;1mGroup Load (0.5ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 25ms (View: 14, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:02:19) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing GroupsController#index (for 127.0.0.1 at 2010-07-14 11:02:22) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "groups" [0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 96ms (View: 84, DB: 1) | 200 OK [http://localhost/groups]
+
+
+Processing GroupsController#new (for 127.0.0.1 at 2010-07-14 11:02:32) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Rendering template within layouts/groups
+Rendering groups/new
+Completed in 25ms (View: 14, DB: 1) | 200 OK [http://localhost/groups/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:02:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TripsController#show_all (for 127.0.0.1 at 2010-07-14 11:02:36) [GET]
+  [4;36;1mTrip Load (1.2ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY trip_id ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "trips" [0m
+Rendering template within layouts/application
+Rendering trips/show_all
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 77ms (View: 69, DB: 2) | 200 OK [http://localhost/all]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:02:37) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:02:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VehiclesController#index (for 127.0.0.1 at 2010-07-14 11:02:43) [GET]
+  [4;36;1mGroup Load (1.3ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;36;1mVehicle Load (0.7ms)[0m   [0;1mSELECT * FROM "vehicles" [0m
+Rendering template within layouts/application
+Rendering vehicles/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 37ms (View: 20, DB: 2) | 200 OK [http://localhost/vehicles]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:02:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-07-14 11:03:45) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;36;1mLocation Load (10.0ms)[0m   [0;1mSELECT * FROM "locations" [0m
+Rendering template within layouts/application
+Rendering locations/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 910ms (View: 783, DB: 11) | 200 OK [http://localhost/locations]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:03:46) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LocationsController#show (for 127.0.0.1 at 2010-07-14 11:03:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."building_dbid" = 1) [0m
+Rendering template within layouts/application
+Rendering locations/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 23ms (View: 10, DB: 1) | 200 OK [http://localhost/locations/1]
+
+
+Processing LocationsController#images to gif (for 127.0.0.1 at 2010-07-14 11:03:48) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:03:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LocationsController#edit (for 127.0.0.1 at 2010-07-14 11:03:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."building_dbid" = 1) [0m
+Rendering template within layouts/application
+Rendering locations/edit
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 26ms (View: 12, DB: 1) | 200 OK [http://localhost/locations/1/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:03:55) [GET]
+
+ActionController::RoutingError (No route matches "/locations/1/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LocationsController#show (for 127.0.0.1 at 2010-07-14 11:03:57) [GET]
+  Parameters: {"id"=>"index"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;36;1mLocation Load (0.1ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."building_dbid" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Location with ID=index):
+  app/controllers/locations_controller.rb:19:in `show'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-07-14 11:05:04) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mLocation Load (63.4ms)[0m   [0mSELECT * FROM "locations" [0m
+Rendering template within layouts/application
+Rendering locations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 839ms (View: 759, DB: 64) | 200 OK [http://localhost/locations]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:05:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LocationsController#show (for 127.0.0.1 at 2010-07-14 11:05:07) [GET]
+  Parameters: {"id"=>"20"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."building_dbid" = 20) [0m
+Rendering template within layouts/application
+Rendering locations/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 23ms (View: 9, DB: 1) | 200 OK [http://localhost/locations/20]
+
+
+Processing LocationsController#images to gif (for 127.0.0.1 at 2010-07-14 11:05:07) [GET]
+  Parameters: {"id"=>"loadingAnimation"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-07-14 11:05:09) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mLocation Load (8.9ms)[0m   [0mSELECT * FROM "locations" [0m
+Rendering template within layouts/application
+Rendering locations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 771ms (View: 746, DB: 10) | 200 OK [http://localhost/locations]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:05:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LocationsController#edit (for 127.0.0.1 at 2010-07-14 11:05:16) [GET]
+  Parameters: {"id"=>"92"}
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."building_dbid" = 92) [0m
+Rendering template within layouts/application
+Rendering locations/edit
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 81ms (View: 12, DB: 1) | 200 OK [http://localhost/locations/92/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:05:16) [GET]
+
+ActionController::RoutingError (No route matches "/locations/92/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-07-14 11:05:21) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+  [4;35;1mLocation Load (8.7ms)[0m   [0mSELECT * FROM "locations" [0m
+Rendering template within layouts/application
+Rendering locations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 763ms (View: 738, DB: 10) | 200 OK [http://localhost/locations]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:05:22) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 11:05:25) [GET]
+  [4;35;1mGroup Load (0.6ms)[0m   [0mSELECT * FROM "groups" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 30ms (View: 19, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:05:25) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2010-07-14 11:05:31) [GET]
+Redirected to http://localhost:3000/login
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admin/logout]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 11:05:31) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:05:32) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 11:07:44) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:07:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 11:10:15) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:10:16) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 11:10:35) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:10:35) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 11:12:19) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:12:19) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 11:12:34) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:12:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 11:13:02) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:13:02) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 11:13:16) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:13:16) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 11:13:33) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:13:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 11:13:56) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"jpA0BH58S0VQ6btoR2jVYr1A6FBE4PrOwwR5DB+rWVI=", "myid"=>"danman01", "password"=>"horse"}
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" = 'danman01') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 11:13:56) [GET]
+  [4;36;1mGroup Load (0.6ms)[0m   [0;1mSELECT * FROM "groups" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."myid" IN ('danman01')) LIMIT 1[0m
+Completed in 17ms (View: 6, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:13:57) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2010-07-14 11:14:10) [GET]
+Redirected to http://localhost:3000/login
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admin/logout]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 11:14:10) [GET]
+Rendering template within layouts/application
+Rendering admin/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 11:14:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/loadingAnimation.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :authorize, :except => [:show]
+  
   # GET /users
   # GET /users.xml
   
@@ -95,61 +97,5 @@ class UsersController < ApplicationController
     end
   end
   
-  def log_out
-		@user = User.find(params[:id])
-		new = {:logged_in => 0}
-		@user.update_attributes(new)
-		redirect_to :back
-	end
-	
-	def log_in
-		@user = User.find(params[:id])
-		new = {:logged_in => 1}
-		@user.update_attributes(new)
-		redirect_to :back
-	end
-	
-	def login
-	   #@admins = User.find(:all, :conditions=>["role=?","admin"])
-	   #@admins.each do |admin|
-	   #  if params[:user][:myid] == admin.myid
-	   #    if params[:user][:password] == admin.password
-         
-	   #      redirect_to '/admin_view'
-       #  else
-       #  flash[:error]='wrong password'
-       #  end
-       # else
-       # flash[:error]='you are not an admin!'
-        
-        
-       #end
-       #end
-   
-   # return unless request.post?
-   # self.current_user = User.ldap_authenticate(params[:login], params[:password])
-   # if logged_in?
-      #if params[:remember_me] == "1"
-      #  self.current_user.remember_me
-      #  cookies[:auth_token] = { :value => self.current_user.remember_token , :expires => self.current_user.remember_token_expires_at }
-        # store in cookie the module where the user logs in.
-      #  cookies[:module] = {:value => params[:select][:module], :expires => self.current_user.remember_token_expires_at}
-    #  end
-      flash[:notice] = "Logged in successfully"
-    #else
-      flash[:error] = "Wrong login credentials !"
-    #end
-
-
   
-	end
-	
-	def admin_view
-	  
-	end
-	
-	def login_page
-	
-	end
-	
 end

@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  before_filter :authorize
   # GET /locations
   # GET /locations.xml
   layout 'application'

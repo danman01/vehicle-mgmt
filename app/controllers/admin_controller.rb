@@ -4,10 +4,14 @@ class AdminController < ApplicationController
   	if request.post?
   		user = User.authenticate(params[:myid], params[:password])
   		if user
+  		  if user.role == "admin"
   			session[:user_id] = user.id
   			uri = session[:original_uri]
   			session[:original_uri]=nil
-  			redirect_to(uri || :action=>'index')
+  			redirect_to(:action=>'index')
+			  else
+			    flash.now[:notice] = "#{user.user_fname}, you are not an admin!"
+    		end
   		else
   			flash.now[:notice] = "invalid user / password combo"
   		end
@@ -28,5 +32,7 @@ class AdminController < ApplicationController
   puts "Logged in successfully"
   end
   end
+  
+  
 
 end

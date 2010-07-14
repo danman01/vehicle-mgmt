@@ -1,4 +1,6 @@
 class TripsController < ApplicationController
+  before_filter :authorize, :only => [:destroy, :edit]
+  
   # GET /trips
   # GET /trips.xml
   layout 'application'

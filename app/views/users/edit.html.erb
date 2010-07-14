@@ -1,4 +1,4 @@
-<%=link_to "Return to Admin page", "/admin_view"%>
+<%=link_to "Return to User Index", "/users"%>
 
 
 <h1>Editing user</h1>
@@ -29,6 +29,11 @@
   <p>
     <%= f.label :user_email %><br />
     <%= f.text_field :user_email %>
+  </p>
+<p>
+    <%= f.label :role, "Admin rights?" %><br />
+    <%= f.check_box(:role, {},"admin", "user")
+	 %>
   </p>
   <p>
     	<%=

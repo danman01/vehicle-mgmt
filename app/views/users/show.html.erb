@@ -1,19 +1,5 @@
-<%=link_to "Return to Admin page", "/admin_view"%>
+<%=link_to "Return to User Index", "/users"%>
 
-
-<h4><%
-	#array of admins
-@admins = User.find(:all, :conditions =>["role =?","admin"])
-	%>
-<% @admins.each do |a|%>
-	<%if @user.myid == a.myid && a.logged_in !=1%>
-		<%= link_to 'log in', :controller=>'users', :action=>'log_in', :id => a.myid%>
-	<%elsif @user.myid == a.myid && a.logged_in ==1 %>
-		<%= link_to 'log out', :controller=>'users', :action=>'log_out', :id => a.myid%>
-	<%end%>
-
-<%end%>
-</h4>
 
 <p>
   <b>Myid:</b>
@@ -39,6 +25,10 @@
   <b>User group:</b>
   <%=h @user.user_group %>
 </p>
+<p>
+    <b>Role:</b>
+    <%=h @user.role%>
+  </p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

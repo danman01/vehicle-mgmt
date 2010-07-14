@@ -176,6 +176,10 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+#login_form 
+{
+	width:400px;
+}
 
 /* TOOLTIP STYLES */
 #tooltip {
