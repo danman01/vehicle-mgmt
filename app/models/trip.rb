@@ -12,6 +12,12 @@ has_and_belongs_to_many :locations, :join_table => "locations_trips", :foreign_k
        
 validates_presence_of :vehicle_id, :myid, :destination_name
 
+validate :good_time 
+
+def good_time
+
+ errors.add(:bad_time, 'Must be this year, this isn\'t back to the future') if self.check_out_time.year!=Time.now.year 
+end
   
 end
 

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authorize, :except => [:show]
+  before_filter :authorize, :except => [:show, :filter]
   
   # GET /users
   # GET /users.xml

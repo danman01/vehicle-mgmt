@@ -26,10 +26,15 @@ class AdminController < ApplicationController
 
   def index
   @user=User.find_by_myid(session[:user_id])
+  if @user
   if @user.hashed_password.blank?
   	flash.now[:notice]= "you need to set a password! <a href='/users/edit/#{@user.myid}'>click</a>"
   else
   puts "Logged in successfully"
+  end
+  else
+	flash[:notice]='you must be an admin'
+	redirect_to '/'
   end
   end
   
