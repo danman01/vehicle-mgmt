@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.show_all '/all', :controller => "trips", :action => "show_all"
   map.login_page '/login', :controller => "admin", :action => "login"
   map.admin_view '/admin_view', :controller =>'users', :action=>'admin_view'
-  map.report 'vehicles/report', :controller => 'vehicles', :action => 'report'
+  map.report '/report', :controller => 'reports', :action => 'index'
   
   map.resources :users
 

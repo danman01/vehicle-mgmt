@@ -1,0 +1,31 @@
+<div>
+	<h1>STATS:</h1>
+
+<p><%=@most_used_person%> with <%=@people_count[0]%> trips</p>
+<p><%=@most_used_vehicle%> with <%=@vehicle_count[0]%> trips</p>
+
+
+<h2> The Rundown:</h2>
+
+<ol>
+	<%n=0%>
+	<%for each in @people%>
+	<li><%=each%>
+		<br />
+		(<%=@people_count[n]%> trips)
+	</li>
+	<%n+=1%>
+	<%end%>
+</ol>
+
+<ol>
+	<%n=0%>
+	<%for each in @vehicles%>
+	<li><%=each%>
+		<br />
+		(<%=@vehicle_count[n]%> trips)
+	</li>
+	<%n+=1%>
+	<%end%>
+</ol>
+</div>
